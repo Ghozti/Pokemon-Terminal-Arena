@@ -16,6 +16,7 @@ public class Pokemon implements PokemonMethods,PokemonUtils{
         name = nm;
         gender = gndr;
         catched = ctch;
+        //pokemon constructor
     }
 
     @Override
@@ -57,14 +58,20 @@ public class Pokemon implements PokemonMethods,PokemonUtils{
     // methods from PokemonUtils v
 
     @Override
-    public void checkForMaxlevel(int lvl) {
-        if(lvl > 100) level = 100;
+    public void checkForMaxlevel() {
+        if(level > 100) level = 100;
+        //this will check to see if the level is over 100. If so it will set it back to 100
     }
 
     @Override
-    public void useHealthPotion(int hp, int healthPotions) {
-        hp = 100;
-        healthPotions--;
+    public void useHealthPotion(int healthPotions) {
+        if(healthPotions < 1){
+            System.err.println("not enough potions!");
+        }else{
+            HP = 100;
+            healthPotions--;
+        }
+        //this method will reset the health to 100 and subtract the user's health potions by 1. It will also check to see if the user has more than 0 potions. If they have 0 then the method will send an error message
     }
 
     @Override
@@ -86,6 +93,8 @@ public class Pokemon implements PokemonMethods,PokemonUtils{
     @Override
     public void setV_gender() {
         int tmp = (int) ( Math.random() * 2 + 1);
+        //gets a random number from 1-2
         gender = tmp == 1 ? "Male" : "Female";
+        //sets the gender to male if 1 otherwise it's female
     }
 }
