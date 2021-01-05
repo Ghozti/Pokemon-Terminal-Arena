@@ -1,10 +1,18 @@
 package ghozti.pokemon.game.pokemon;
 
-public interface PokemonUtils {
-    public void checkForMaxlevel();
-    public void useHealthPotion(int healthPotions);
-    public void catchPokemon(boolean catched);
-    public void setV_name(String newName);
-    public void setV_HPAndLV(int hp, int lvl);
-    public void setV_gender();
+
+import ghozti.pokemon.game.user.User;
+
+public class PokemonUtils{
+    public static int randomizer(int num, int num2){
+        return (int) ( Math.random() * num2 + num);
+    }
+
+    public static void printPokemon(){
+        for (int i = 0; i < User.pokemons.size(); i++) {
+            System.out.println("[ " + i + " ]" + User.pokemons.get(i).name);
+        }
+    }
+
+
 }
