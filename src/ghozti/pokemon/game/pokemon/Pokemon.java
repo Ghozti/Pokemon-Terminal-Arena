@@ -77,7 +77,7 @@ public class Pokemon {
 
     public void useHealthPotion(int healthPotions) {
         if(healthPotions < 1){
-            System.err.println("not enough potions!");
+            System.out.println("***not enough potions!***");
         }else{
             HP = 100;
             healthPotions--;
@@ -101,6 +101,8 @@ public class Pokemon {
                 if(User.pokeball < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
+                }else{
+
                 }
                 break;
             case 2:
@@ -108,6 +110,8 @@ public class Pokemon {
                 if(User.greatBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
+                }else{
+
                 }
                 break;
             case 3:
@@ -115,6 +119,8 @@ public class Pokemon {
                 if(User.ultraBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
+                }else{
+
                 }
                 break;
             case 4:
@@ -122,6 +128,8 @@ public class Pokemon {
                 if(User.masterBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
+                }else{
+
                 }
                 break;
             case 5:
@@ -129,6 +137,8 @@ public class Pokemon {
                 if(User.quickBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
+                }else{
+
                 }
                 break;
         }
