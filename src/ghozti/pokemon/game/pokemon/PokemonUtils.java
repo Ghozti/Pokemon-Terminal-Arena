@@ -4,6 +4,7 @@ package ghozti.pokemon.game.pokemon;
 import ghozti.pokemon.game.user.User;
 
 public class PokemonUtils{
+
     public static int randomizer(int num, int num2){
         return (int) ( Math.random() * num2 + num);
     }

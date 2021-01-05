@@ -45,13 +45,14 @@ public class UserMethods extends User{
     }
 
     public static void printInventory(){
+        System.out.println("INVENTORY: ");
         System.out.println("$ " + money);
-        System.out.println(pokeball + " PokeBall(s)");
-        System.out.println(greatBall + " GreatBalls(s)");
-        System.out.println(ultraBall + " UltraBalls");
-        System.out.println(masterBall + " MasterBall(s)");
-        System.out.println(quickBall + " QuickBall(s)");
-        System.out.println(healthPotions + " HeathPotions");
+        System.out.println("1. " + pokeball + " PokeBall(s)");
+        System.out.println("2. " + greatBall + " GreatBalls(s)");
+        System.out.println("3. " + ultraBall + " UltraBall(s)");
+        System.out.println("4. " + masterBall + " MasterBall(s)");
+        System.out.println("5. " + quickBall + " QuickBall(s)");
+        System.out.println("6. " + healthPotions + " HeathPotion(s)");
         //will display the user's inventory. simple
     }
 }

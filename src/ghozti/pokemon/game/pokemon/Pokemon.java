@@ -1,6 +1,9 @@
 package ghozti.pokemon.game.pokemon;
 
-import java.util.logging.Level;
+import ghozti.pokemon.game.user.User;
+import ghozti.pokemon.game.user.UserMethods;
+
+import java.util.Scanner;
 
 public class Pokemon {
 
@@ -83,7 +86,52 @@ public class Pokemon {
         //this method will reset the health to 100 and subtract the user's health potions by 1. It will also check to see if the user has more than 0 potions. If they have 0 then the method will send an error message
     }
 
-    public void catchPokemon() {
+    public static void catchPokemon() {
+        Scanner scanner = new Scanner(System.in);
+        //scanner object
+        System.out.println("To Try To Catch This Pokemon You Must Use A Ball!");
+        UserMethods.printInventory();
+        System.out.println("What Will You Use?");
+        //dialogue and printing
+        int choice = scanner.nextInt();
+        //hold the user's choice
+        switch (choice){
+            case 1:
+                System.out.println("You Chose A PokeBall!");
+                if(User.pokeball < 1) {
+                    System.out.println("***You Do Not Have Enough Of This Item***");
+                    catchPokemon();
+                }
+                break;
+            case 2:
+                System.out.println("You Chose A GreatBall!");
+                if(User.greatBall < 1) {
+                    System.out.println("***You Do Not Have Enough Of This Item***");
+                    catchPokemon();
+                }
+                break;
+            case 3:
+                System.out.println("You Chose An UltraBall!");
+                if(User.ultraBall < 1) {
+                    System.out.println("***You Do Not Have Enough Of This Item***");
+                    catchPokemon();
+                }
+                break;
+            case 4:
+                System.out.println("You Chose A MasterBall!");
+                if(User.masterBall < 1) {
+                    System.out.println("***You Do Not Have Enough Of This Item***");
+                    catchPokemon();
+                }
+                break;
+            case 5:
+                System.out.println("You Chose A QuickBall!");
+                if(User.quickBall < 1) {
+                    System.out.println("***You Do Not Have Enough Of This Item***");
+                    catchPokemon();
+                }
+                break;
+        }
 
     }
 
