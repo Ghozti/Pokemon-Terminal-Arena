@@ -55,4 +55,23 @@ public class UserMethods extends User{
         System.out.println("6. " + healthPotions + " HeathPotion(s)");
         //will display the user's inventory. simple
     }
+
+    private static void addRank(){
+        if(User.userXP >= 37 && User.userXP < 74){
+            User.userRank = 1;
+        }else if(User.userXP >= 74 && User.userXP < 111){
+            User.userRank = 2;
+        }else if(User.userXP >= 111){
+            User.userRank = 3;
+        }
+        /*
+        * okay so what this does is check if the user's xp meets a certain range for the method to then set a rank
+         */
+    }
+
+    public static void addXp(int xp){
+        User.userXP += xp;
+        addRank();
+        //what this does is add xp to the user. Also it calls the addRank method every time to see if the user is eligible to meet a certain rank
+    }
 }

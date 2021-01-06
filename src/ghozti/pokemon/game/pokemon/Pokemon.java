@@ -142,7 +142,6 @@ public class Pokemon {
                 }
                 break;
         }
-
     }
 
     public void setV_name(String newName) {
