@@ -18,7 +18,7 @@ public class Pokemon {
         HP = hp;
         level = lvl;
         speed = spd;
-        this.evolutionStage =evolutionStage;
+        this.evolutionStage = evolutionStage;
         name = nm;
         gender = gndr;
         catched = ctch;
