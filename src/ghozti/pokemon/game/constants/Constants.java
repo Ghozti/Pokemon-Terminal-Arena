@@ -6,6 +6,7 @@ public class Constants {
 
     /*
     * all of these classes will represent the different difficulties and rates depending on the user's rank and pokemon's evolution stage.
+    * The user rankrate will be a small percentage that will be decreased from the efficiency of all items except the master ball.
      */
 
     public static final double pokemonEv1Rate = .65;

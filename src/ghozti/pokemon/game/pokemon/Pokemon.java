@@ -84,7 +84,9 @@ public class Pokemon {
             healthPotions--;
             System.out.println("Health Has Been Restored");
         }
-        //this method will reset the health to 100 and subtract the user's health potions by 1. It will also check to see if the user has more than 0 potions. If they have 0 then the method will send an error message
+        /*this method will reset the health to 100 and subtract the user's health potions by 1. It will also check to see if the user has more than 0 potions.
+        If they have 0 then the method will send an error message
+         */
     }
 
     public static void catchPokemon() {
@@ -146,6 +148,11 @@ public class Pokemon {
             catchPokemon();
         }
     }
+    /*
+    this method works like the delete pokemon one. It tells the user what item they wish to use and check for invalid inputs. If there is an invalid input then the method will recall itself until there is a
+    valid input.
+    TODO add a "cancel" option in case the user accidentally entered this option/changes their mind.
+     */
 
     public void setV_name(String newName) {
         name = newName;
@@ -156,7 +163,7 @@ public class Pokemon {
         level = lvl;
     }
 
-    public void setV_gender() {
+    public void setGender() {
         int tmp = (int) ( Math.random() * 2 + 1);
         //gets a random number from 1-2
         gender = tmp == 1 ? "Male" : "Female";

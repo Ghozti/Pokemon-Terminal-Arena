@@ -21,6 +21,7 @@ public class PokemonUtils{
     public static void addPokemon(Pokemon pokemon){
         User.pokemons.add(pokemon);
         System.out.println("Added: " + pokemon.name + " to your inventory!");
+        //adds a pokemon object to the User.pokemons arraylist
     }
 
     public static void removePokemon(){
@@ -41,4 +42,10 @@ public class PokemonUtils{
             removePokemon();
         }
     }
+
+    /*
+    *this method will ask the user to enter the index of the pokemon that they wish to remove. The method also checks for invalid inputs/index out of bounds.
+    * If the method captures an invalid input it will call itself again until the user does it right.
+    * //TODO add a "cancel" option in case the user accidentally entered this option/changes their mind.
+     */
 }
