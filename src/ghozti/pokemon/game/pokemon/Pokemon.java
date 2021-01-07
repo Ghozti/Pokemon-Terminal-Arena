@@ -3,6 +3,7 @@ package ghozti.pokemon.game.pokemon;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Pokemon {
@@ -93,54 +94,56 @@ public class Pokemon {
         UserMethods.printInventory();
         System.out.println("What Will You Use?");
         //dialogue and printing
-        int choice = scanner.nextInt();
-        //hold the user's choice
-        switch (choice){
-            case 1:
+        try {
+            int choice = scanner.nextInt();
+            //hold the user's choice
+            if(choice == 1) {
                 System.out.println("You Chose A PokeBall!");
-                if(User.pokeball < 1) {
+                if (User.pokeball < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
-                }else{
+                } else {
 
                 }
-                break;
-            case 2:
+            }else if(choice == 2) {
                 System.out.println("You Chose A GreatBall!");
-                if(User.greatBall < 1) {
+                if (User.greatBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
-                }else{
+                } else {
 
                 }
-                break;
-            case 3:
+            }else if(choice == 3) {
                 System.out.println("You Chose An UltraBall!");
-                if(User.ultraBall < 1) {
+                if (User.ultraBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
-                }else{
+                } else {
 
                 }
-                break;
-            case 4:
+            }else if(choice == 4) {
                 System.out.println("You Chose A MasterBall!");
-                if(User.masterBall < 1) {
+                if (User.masterBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
-                }else{
+                } else {
 
                 }
-                break;
-            case 5:
+            }else if(choice == 5) {
                 System.out.println("You Chose A QuickBall!");
-                if(User.quickBall < 1) {
+                if (User.quickBall < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
-                }else{
+                } else {
 
                 }
-                break;
+            }else{
+                System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+                catchPokemon();
+            }
+        }catch(InputMismatchException e){
+            System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+            catchPokemon();
         }
     }
 

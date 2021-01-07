@@ -14,7 +14,7 @@ public class PokemonUtils{
 
     public static void printPokemon(){
         for (int i = 0; i < User.pokemons.size(); i++) {
-            System.out.println("[ " + i + " ]" + User.pokemons.get(i).name);
+            System.out.println("[ " + i + " ]" + "" + User.pokemons.get(i).name);
         }
     }
 
