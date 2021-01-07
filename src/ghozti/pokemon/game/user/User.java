@@ -23,5 +23,4 @@ public class User {
     //represents the user's inventory
 
     public static ArrayList<Pokemon> pokemons = new ArrayList<>();//will hold the pokemon objects of the user.
-
 }
