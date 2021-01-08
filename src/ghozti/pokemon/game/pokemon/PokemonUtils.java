@@ -2,6 +2,7 @@ package ghozti.pokemon.game.pokemon;
 
 
 import ghozti.pokemon.game.user.User;
+import ghozti.pokemon.game.user.UserMethods;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -24,13 +25,17 @@ public class PokemonUtils{
         //adds a pokemon object to the User.pokemons arraylist
     }
 
-    public static void removePokemon(){
+    public static int removePokemon(){
         try {
             Scanner scanner = new Scanner(System.in);
             printPokemon();
             System.out.println("***Enter the index of the pokemon that you want to remove***");
+            System.out.println("***Or Enter [-1] to cancel***");
             try {
                 int ind = scanner.nextInt();
+                if(ind == -1){
+                    return -1;
+                }
                 User.pokemons.remove(ind);
                 System.out.println("removed the pokemon from your inventory");
             }catch (InputMismatchException e){
@@ -41,11 +46,12 @@ public class PokemonUtils{
             System.out.println("***YOU EITHER ENTERED A NEGATIVE NUMBER OR A NUMBER THAT DOES NOT MATCH AN INDEX...PLEASE ENTER A VALID NUMBER***");
             removePokemon();
         }
+        return 0;
     }
 
     /*
     *this method will ask the user to enter the index of the pokemon that they wish to remove. The method also checks for invalid inputs/index out of bounds.
     * If the method captures an invalid input it will call itself again until the user does it right.
-    * //TODO add a "cancel" option in case the user accidentally entered this option/changes their mind.
+    * The method also has a cancel option. If the user enters -1 the method will end and go back to whatever comes next.
      */
 }

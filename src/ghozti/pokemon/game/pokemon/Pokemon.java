@@ -89,7 +89,7 @@ public class Pokemon {
          */
     }
 
-    public static void catchPokemon() {
+    public static int catchPokemon() {
         Scanner scanner = new Scanner(System.in);
         //scanner object
         System.out.println("To Try To Catch This Pokemon You Must Use A Ball!");
@@ -99,13 +99,27 @@ public class Pokemon {
         try {
             int choice = scanner.nextInt();
             //hold the user's choice
-            if(choice == 1) {
+            if(choice == -1){
+                return -1;
+            }else if(choice == 1) {
                 System.out.println("You Chose A PokeBall!");
                 if (User.pokeball < 1) {
                     System.out.println("***You Do Not Have Enough Of This Item***");
                     catchPokemon();
                 } else {
-
+                    //TODO do the rest of the method.
+                    //MAYBE USE A FOR EACH LOOP TO REUSE CODE. FOR EX:
+                    /*
+                        int o = 1;
+                        for(int i = 0; i < 5; i++){
+                            if(i == o){
+                               //dosomething
+                            }else{
+                                i++;
+                                o++;
+                            }
+                        }
+                     */
                 }
             }else if(choice == 2) {
                 System.out.println("You Chose A GreatBall!");
@@ -147,11 +161,12 @@ public class Pokemon {
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
             catchPokemon();
         }
+        return 0;
     }
     /*
     this method works like the delete pokemon one. It tells the user what item they wish to use and check for invalid inputs. If there is an invalid input then the method will recall itself until there is a
     valid input.
-    TODO add a "cancel" option in case the user accidentally entered this option/changes their mind.
+    The method also has a cancel option. If the user enters -1 the method will end and go back to whatever comes next.
      */
 
     public void setV_name(String newName) {
