@@ -3,6 +3,7 @@ package ghozti.pokemon.game.pokemon;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -89,7 +90,7 @@ public class Pokemon {
          */
     }
 
-    public static int catchPokemon() {
+    public static void catchPokemon() {
         Scanner scanner = new Scanner(System.in);
         //scanner object
         System.out.println("To Try To Catch This Pokemon You Must Use A Ball!");
@@ -100,7 +101,7 @@ public class Pokemon {
             int choice = scanner.nextInt();
             //hold the user's choice
             if(choice == -1){
-                return -1;
+                return;
             }else if(choice == 1) {
                 System.out.println("You Chose A PokeBall!");
                 if (User.pokeball < 1) {
@@ -161,7 +162,6 @@ public class Pokemon {
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
             catchPokemon();
         }
-        return 0;
     }
     /*
     this method works like the delete pokemon one. It tells the user what item they wish to use and check for invalid inputs. If there is an invalid input then the method will recall itself until there is a
@@ -183,5 +183,38 @@ public class Pokemon {
         //gets a random number from 1-2
         gender = tmp == 1 ? "Male" : "Female";
         //sets the gender to male if 1 otherwise it's female
+    }
+
+    public static void test() {
+        Scanner scanner = new Scanner(System.in);
+        //scanner object
+        System.out.println("To Try To Catch This Pokemon You Must Use A Ball!");
+        UserMethods.printInventory();
+        System.out.println("What Will You Use?");
+        System.out.println("***OR TYPE 0 TO EXIT***");
+        //dialogue and printing
+        try {
+            int[] pokeballs = {0,User.pokeball, User.greatBall, User.ultraBall, User.masterBall, User.quickBall};
+            int choice = scanner.nextInt();
+            //hold the user's choice
+                if (choice == 0) {
+                    return;
+                }
+                try {
+                    if (pokeballs[choice] > 0) {
+                        pokeballs[choice]--;
+                        System.out.println("***USED AN ITEM***");
+                    }else {
+                        System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
+                        test();
+                    }
+                }catch (IndexOutOfBoundsException e){
+                    System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+                    test();
+                }
+        }catch(InputMismatchException e){
+            System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+            test();
+        }
     }
 }

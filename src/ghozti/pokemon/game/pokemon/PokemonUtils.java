@@ -25,7 +25,7 @@ public class PokemonUtils{
         //adds a pokemon object to the User.pokemons arraylist
     }
 
-    public static int removePokemon(){
+    public static void removePokemon(){
         try {
             Scanner scanner = new Scanner(System.in);
             printPokemon();
@@ -34,7 +34,7 @@ public class PokemonUtils{
             try {
                 int ind = scanner.nextInt();
                 if(ind == -1){
-                    return -1;
+                    return;
                 }
                 User.pokemons.remove(ind);
                 System.out.println("removed the pokemon from your inventory");
@@ -46,7 +46,6 @@ public class PokemonUtils{
             System.out.println("***YOU EITHER ENTERED A NEGATIVE NUMBER OR A NUMBER THAT DOES NOT MATCH AN INDEX...PLEASE ENTER A VALID NUMBER***");
             removePokemon();
         }
-        return 0;
     }
 
     /*

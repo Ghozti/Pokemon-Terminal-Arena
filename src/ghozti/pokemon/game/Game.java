@@ -8,6 +8,6 @@ public class Game {
     }
 
     private void start(){
-        Pokemon.catchPokemon();
+        Pokemon.test();
     }
 }

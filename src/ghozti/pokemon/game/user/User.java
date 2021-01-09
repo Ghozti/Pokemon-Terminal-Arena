@@ -15,11 +15,11 @@ public class User {
 
     public static int money;
     public static int healthPotions;
-    public static int pokeball;
-    public static int greatBall;
-    public static int ultraBall;
-    public static int masterBall;
-    public static int quickBall;
+    public static int pokeball = 2;
+    public static int greatBall = 2;
+    public static int ultraBall = 2;
+    public static int masterBall = 2;
+    public static int quickBall = 2;
     //represents the user's inventory
 
     public static ArrayList<Pokemon> pokemons = new ArrayList<>();//will hold the pokemon objects of the user.
