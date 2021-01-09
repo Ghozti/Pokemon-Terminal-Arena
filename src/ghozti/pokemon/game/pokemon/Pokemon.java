@@ -2,8 +2,6 @@ package ghozti.pokemon.game.pokemon;
 
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
-
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -124,9 +122,11 @@ public class Pokemon {
     }
 
     /*
-    this method works like the delete pokemon one. It tells the user what item they wish to use and check for invalid inputs. If there is an invalid input then the method will recall itself until there is a
-    valid input.
-    The method also has a cancel option. If the user enters -1 the method will end and go back to whatever comes next.
+    this method works like the delete pokemon one.
+    The method also has a cancel option. If the user enters 0 the method will end and go back to whatever comes next.
+    The method also checks for invalid inputs like strings or a number out of range from the array list.
+    It also checks to see if the selected option is greater than 0. If so the method will execute otherwise it will alert the user that
+    They do not have enough of the item. Then it will recall itself.
      */
 
     public void setV_name(String newName) {

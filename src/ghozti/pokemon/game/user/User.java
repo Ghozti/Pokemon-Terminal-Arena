@@ -1,7 +1,6 @@
 package ghozti.pokemon.game.user;
 
 import ghozti.pokemon.game.pokemon.Pokemon;
-
 import java.util.ArrayList;
 
 public class User {

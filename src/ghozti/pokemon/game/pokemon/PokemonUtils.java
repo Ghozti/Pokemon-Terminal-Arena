@@ -1,9 +1,6 @@
 package ghozti.pokemon.game.pokemon;
 
-
 import ghozti.pokemon.game.user.User;
-import ghozti.pokemon.game.user.UserMethods;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
