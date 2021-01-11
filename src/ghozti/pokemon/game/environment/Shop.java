@@ -3,6 +3,7 @@ package ghozti.pokemon.game.environment;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 
+import java.lang.reflect.Array;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -103,6 +104,29 @@ public class Shop {
                     User.money -= (amount * 10);
                     System.out.println("***ADDED " + amount + " POKEBALL(S) TO YOUR INVENTORY!***");
                 }
+        }
+    }
+
+    public static void test(){
+        Scanner scanner = new Scanner(System.in);
+        int choice = shopMenu();
+        if(choice == 0){
+            return;
+        }
+        int amount;
+        int[] items = {0, User.pokeball, User.greatBall, User.quickBall, User.ultraBall, User.masterBall, User.healthPotions};
+        int[] costs = {0, 10, 20, 15, 45, 550, 10};
+
+        System.out.println("Great! How Many Do You Want?");
+        amount = scanner.nextInt();
+
+        if(costs[choice] * amount > User.money){
+            System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
+            test();
+        }else{
+            User.money -= (amount * 10);
+            items[choice] += amount;
+            System.out.println("***ADDED " + amount + " OF THE ITEM TO YOUR INVENTORY!***");
         }
     }
 }
