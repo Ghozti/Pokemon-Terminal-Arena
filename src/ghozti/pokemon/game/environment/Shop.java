@@ -3,7 +3,6 @@ package ghozti.pokemon.game.environment;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Shop {
