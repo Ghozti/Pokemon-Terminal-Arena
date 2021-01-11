@@ -2,8 +2,6 @@ package ghozti.pokemon.game.environment;
 
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
-
-import java.lang.reflect.Array;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -45,84 +43,21 @@ public class Shop {
     }
 
     public static void shop(){
-        Scanner scanner = new Scanner(System.in);
-        int choice = shopMenu();
-        int amount;
-
-        switch (choice){
-            case 1:
-                System.out.println("Great! How Many Do You Want?");
-                amount = scanner.nextInt();
-                if(amount * 10 > User.money){
-                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-                }else{
-                    User.money -= (amount * 10);
-                    System.out.println("***ADDED " + amount + " POKEBALL(S) TO YOUR INVENTORY!***");
-                }
-            case 2:
-                System.out.println("Great! How Many Do You Want?");
-                amount = scanner.nextInt();
-                if(amount * 20 > User.money){
-                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-                }else{
-                    User.money -= (amount * 20);
-                    System.out.println("***ADDED " + amount + " POKEBALL(S) TO YOUR INVENTORY!***");
-                }
-            case 3:
-                System.out.println("Great! How Many Do You Want?");
-                amount = scanner.nextInt();
-                if(amount * 15 > User.money){
-                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-                }else{
-                    User.money -= (amount * 15);
-                    System.out.println("***ADDED " + amount + " POKEBALL(S) TO YOUR INVENTORY!***");
-                }
-            case 4:
-                System.out.println("Great! How Many Do You Want?");
-                amount = scanner.nextInt();
-                if(amount * 45 > User.money){
-                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-                }else{
-                    User.money -= (amount * 45);
-                    System.out.println("***ADDED " + amount + " POKEBALL(S) TO YOUR INVENTORY!***");
-                }
-            case 5:
-                System.out.println("Great! How Many Do You Want?");
-                amount = scanner.nextInt();
-                if(amount * 550 > User.money){
-                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-                }else{
-                    User.money -= (amount * 550);
-                    System.out.println("***ADDED " + amount + " POKEBALL(S) TO YOUR INVENTORY!***");
-                }
-            case 6:
-                System.out.println("Great! How Many Do You Want?");
-                amount = scanner.nextInt();
-                if(amount * 10 > User.money){
-                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-                }else{
-                    User.money -= (amount * 10);
-                    System.out.println("***ADDED " + amount + " POKEBALL(S) TO YOUR INVENTORY!***");
-                }
-        }
-    }
-
-    public static void test(){
+        int[] items = {0, User.pokeball, User.greatBall, User.quickBall, User.ultraBall, User.masterBall, User.healthPotions};
+        int[] costs = {0, 10, 20, 15, 45, 550, 10};
         Scanner scanner = new Scanner(System.in);
         int choice = shopMenu();
         if(choice == 0){
             return;
         }
         int amount;
-        int[] items = {0, User.pokeball, User.greatBall, User.quickBall, User.ultraBall, User.masterBall, User.healthPotions};
-        int[] costs = {0, 10, 20, 15, 45, 550, 10};
 
         System.out.println("Great! How Many Do You Want?");
         amount = scanner.nextInt();
 
         if(costs[choice] * amount > User.money){
             System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-            test();
+            shop();
         }else{
             User.money -= (amount * 10);
             items[choice] += amount;
