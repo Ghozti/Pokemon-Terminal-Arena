@@ -7,33 +7,33 @@ public class UserMethods extends User{
         //sets the user's name to whatever they want.
     }
 
-    public static void addItem(char item,int count){
+    public static void addItem(int item,int count){
         switch(item){
-            case 'm':
+            case 1:
                 money += count;
                 System.out.println("added " + count + " dollar(s) to your inventory!");
                 break;
-            case 'h':
+            case 2:
                 healthPotions += count;
                 System.out.println("added " + count + " health potion(s) to your inventory!");
                 break;
-            case 'p':
+            case 3:
                 pokeball += count;
                 System.out.println("added " + count + " poke ball(s) to your inventory!");
                 break;
-            case 'g':
+            case 4:
                 greatBall += count;
                 System.out.println("added " + count + " great ball(s) to your inventory!");
                 break;
-            case 'u':
+            case 5:
                 ultraBall += count;
                 System.out.println("added " + count + " ultra ball(s) to your inventory!");
                 break;
-            case 'M':
+            case 6:
                 masterBall += masterBall;
                 System.out.println("added " + count + " master ball(s) to your inventory!");
                 break;
-            case 'q':
+            case 7:
                 quickBall += count;
                 System.out.println("added " + count + " quick ball(s) to your inventory!");
                 break;
@@ -56,7 +56,7 @@ public class UserMethods extends User{
         //will display the user's inventory. simple
     }
 
-    private static void addRank(){
+    private static void checkRank(){
         if(User.userXP >= 37 && User.userXP < 74){
             User.userRank = 1;
         }else if(User.userXP >= 74 && User.userXP < 111){
@@ -71,7 +71,7 @@ public class UserMethods extends User{
 
     public static void addXp(int xp){
         User.userXP += xp;
-        addRank();
+        checkRank();
         //what this does is add xp to the user. Also it calls the addRank method every time to see if the user is eligible to meet a certain rank
     }
 

@@ -9,6 +9,6 @@ public class Game {
     }
 
     private void start(){
-        Shop.test();
+
     }
 }

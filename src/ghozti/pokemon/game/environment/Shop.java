@@ -3,6 +3,7 @@ package ghozti.pokemon.game.environment;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Shop {
@@ -20,6 +21,7 @@ public class Shop {
         list[3] = "[4] Ultra Ball ($45 per ball)";
         list[4] = "[5] Master Ball ($550 per ball)";
         list[5] = "[6] Health Potion ($10 per potion)";
+        list[6] = "[7] Heal All Pokemon";
         for (String i : list) {
             System.out.println(i);
         }
@@ -29,7 +31,7 @@ public class Shop {
             choice = scanner.nextInt();
             if(choice == 0){
                 return 0;
-            }else if(choice > 0 && choice < 7){
+            }else if(choice > 0 && choice < 8){
                 return choice;
             }else{
                 System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
@@ -43,12 +45,18 @@ public class Shop {
     }
 
     public static void shop(){
-        int[] items = {0, User.pokeball, User.greatBall, User.quickBall, User.ultraBall, User.masterBall, User.healthPotions};
         int[] costs = {0, 10, 20, 15, 45, 550, 10};
         Scanner scanner = new Scanner(System.in);
         int choice = shopMenu();
         if(choice == 0){
             return;
+        }
+
+        if(choice == 7){
+            for (int i = 0; i < User.pokemons.size(); i++){
+                User.pokemons.get(i).HP = 100;
+            }
+            System.out.println("***Healed All Pokemon***");
         }
         int amount;
 
@@ -60,8 +68,7 @@ public class Shop {
             shop();
         }else{
             User.money -= (amount * 10);
-            items[choice] += amount;
-            System.out.println("***ADDED " + amount + " OF THE ITEM TO YOUR INVENTORY!***");
+            UserMethods.addItem(choice,amount);
         }
     }
 }
