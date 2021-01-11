@@ -1,5 +1,6 @@
 package ghozti.pokemon.game;
 
+import ghozti.pokemon.game.environment.GameStructure;
 import ghozti.pokemon.game.environment.Shop;
 import ghozti.pokemon.game.pokemon.Pokemon;
 
@@ -9,6 +10,6 @@ public class Game {
     }
 
     private void start(){
-
+        GameStructure.checkPokemon();
     }
 }
