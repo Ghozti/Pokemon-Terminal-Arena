@@ -26,6 +26,7 @@ public class Shop {
         }
         System.out.println("***INVENTORY***");
         UserMethods.printInventory();
+        System.out.println("***IF YOU WISH TO CANCEL THIS ENTER [0]***");
         try {
             choice = scanner.nextInt();
             if(choice == 0){
@@ -42,14 +43,16 @@ public class Shop {
         }
         return 0;
     }
+    /*
+        this method will print out all options that the user can choose from. And like other methods it will check for invalid inputs.
+        If there are none it will return the user's choice. It will also check if the user entered 0 since it is the "escape" option in case the user decides to not buy anything
+     */
 
     public static void shop(){
         int[] costs = {0, 10, 20, 15, 45, 550, 10};
         Scanner scanner = new Scanner(System.in);
+        int amount;
         int choice = shopMenu();
-        if(choice == 0){
-            return;
-        }
 
         if(choice == 7){
             for (int i = 0; i < User.pokemons.size(); i++){
@@ -57,7 +60,6 @@ public class Shop {
             }
             System.out.println("***Healed All Pokemon***");
         }
-        int amount;
 
         System.out.println("Great! How Many Do You Want?");
         amount = scanner.nextInt();
@@ -70,4 +72,8 @@ public class Shop {
             UserMethods.addItem(choice,amount);
         }
     }
+    /*
+        the shop method will get the user's input from shopMenu and process what to do based on the user's input. If the user's choice is 7, all of the user's pokemon will be healed.
+        If the option is not 0, the user will be asked how much of the item they wish to buy.
+     */
 }

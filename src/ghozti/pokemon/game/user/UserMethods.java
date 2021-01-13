@@ -74,8 +74,4 @@ public class UserMethods extends User{
         checkRank();
         //what this does is add xp to the user. Also it calls the addRank method every time to see if the user is eligible to meet a certain rank
     }
-
-    public static void mainMenu(){
-
-    }
 }
