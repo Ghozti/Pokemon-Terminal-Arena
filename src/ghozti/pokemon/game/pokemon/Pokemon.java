@@ -10,11 +10,10 @@ public class Pokemon {
     final private int maxHP = 100;
 
     public int HP, level, speed, evolutionStage;
-    public String type,name,gender;
+    public String name,gender;
     public boolean catched;
 
-    public Pokemon(String type, int hp, int lvl, int spd,int evolutionStage, String nm, String gndr, Boolean ctch) {
-        this.type = type;
+    public Pokemon(int hp, int lvl, int spd,int evolutionStage, String nm, String gndr, Boolean ctch) {
         HP = hp;
         level = lvl;
         speed = spd;
@@ -24,7 +23,6 @@ public class Pokemon {
         catched = ctch;
         //pokemon constructor
     }
-
 
     public int move1() {
         return 0;
