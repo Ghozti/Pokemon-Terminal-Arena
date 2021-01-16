@@ -20,10 +20,11 @@ public class PokemonLists {
     protected static ArrayList<String> evl2names = new ArrayList<>();
     protected static ArrayList<String> evl3names = new ArrayList<>();
 
-    private static void setAllnames(){
+    public static void setAllnames(){
         setEvl1names();
         setEvl2names();
         setEvl3names();
+        //will call the set name methods and give data to the array lists
     }
 
     private static void setEvl1names(){
@@ -47,6 +48,7 @@ public class PokemonLists {
         evl1names.add("Fennekin");
         evl1names.add("Froakie");
         evl1names.add("Fletchling");
+        //sets the names for the evolution 1 array list
     }
 
     private static void setEvl2names(){
@@ -70,6 +72,7 @@ public class PokemonLists {
         evl2names.add("Braixen");
         evl2names.add("Frogadier");
         evl2names.add("Fletchinder");
+        //sets the names for the evolution 2 array list
     }
 
     private static void setEvl3names(){
@@ -93,5 +96,6 @@ public class PokemonLists {
         evl3names.add("Delphox");
         evl3names.add("Greninja");
         evl3names.add("Talonflame");
+        //sets the names for the evolution 2 array list
     }
 }

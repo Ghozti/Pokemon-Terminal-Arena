@@ -8,12 +8,13 @@ public class PokemonUtils{
 
     public static int randomizer(int num, int num2){
         return (int) ( Math.random() * num2 + num);
-    }
+    }//this util can be used anywhere. It will create random number in between whatever numbers specified in the argument
 
     public static void printPokemon(){
         for (int i = 0; i < User.pokemons.size(); i++) {
             System.out.println("[ " + i + " ]" + "" + User.pokemons.get(i).name);
         }
+        //will print pokemon
     }
 
     public static void addPokemon(Pokemon pokemon){

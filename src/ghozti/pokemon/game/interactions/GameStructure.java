@@ -71,7 +71,6 @@ public class GameStructure {
             if (printDetails) {
                 for (int i = 0; i < User.pokemons.size(); i++) {
                     System.out.println("[ " + i + " ]" + "" + User.pokemons.get(i).name);
-                    System.out.println("[Type]" + "" + User.pokemons.get(i).type);
                     System.out.println("[HP]" + "" + User.pokemons.get(i).HP);
                     System.out.println("[Level]" + "" + User.pokemons.get(i).level);
                     System.out.println("[Speed]" + "" + User.pokemons.get(i).speed);
