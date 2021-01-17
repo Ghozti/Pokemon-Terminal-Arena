@@ -1,5 +1,6 @@
 package ghozti.pokemon.game.pokemon;
 
+import ghozti.pokemon.game.constants.Constants;
 import ghozti.pokemon.game.user.User;
 
 public class PokemonCreator {
@@ -8,11 +9,11 @@ public class PokemonCreator {
         PokemonLists.setAllnames();
         int num = PokemonUtils.randomizer(0,100);
 
-        if(num < 66){
+        if(num < Constants.pokemonEv1Rate+1){
             return PokemonLists.evl1names.get(PokemonUtils.randomizer(0,PokemonLists.evl1names.size()));
-        }else if(num > 65 && num < 95){
+        }else if(num > Constants.pokemonEv1Rate && num < (100-Constants.pokemonEv3Rate)){
             return PokemonLists.evl2names.get(PokemonUtils.randomizer(0,PokemonLists.evl2names.size()));
-        }else if(num > 95){
+        }else if(num > (100-Constants.pokemonEv3Rate)){
             return PokemonLists.evl3names.get(PokemonUtils.randomizer(0,PokemonLists.evl3names.size()));
         }
         return "";
@@ -40,6 +41,10 @@ public class PokemonCreator {
     public static Pokemon createPokemon(){
         int evostage = 0;
         String name = getName();
+
+        while (name.isEmpty()){
+            name = getName();
+        }
 
         for(String i : PokemonLists.evl1names){
             if (name.equals(i)) {

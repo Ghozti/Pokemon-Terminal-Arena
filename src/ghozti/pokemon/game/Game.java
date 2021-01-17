@@ -16,9 +16,9 @@ public class Game {
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
 
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             Pokemon pokemon = PokemonCreator.createPokemon();
-            System.out.println(pokemon.gender + " " + pokemon.name + " " + pokemon.level + " " + pokemon.HP + " " + pokemon.evolutionStage + " " + pokemon.speed);
+            System.out.println(pokemon.gender + " " + "[" + pokemon.name + "]" + " " + pokemon.level + " " + pokemon.HP + " " + pokemon.evolutionStage + " " + pokemon.speed);
         }
     }
 }
