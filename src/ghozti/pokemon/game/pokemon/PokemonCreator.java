@@ -4,7 +4,7 @@ import ghozti.pokemon.game.user.User;
 
 public class PokemonCreator {
 
-    private String getName() {
+    private static String getName() {
         PokemonLists.setAllnames();
         int num = PokemonUtils.randomizer(0,100);
 
@@ -18,7 +18,7 @@ public class PokemonCreator {
         return "";
     }//will use the pokemon chance rates and return a name using whatever the rolled number is.It will also call a random index from the pokemon list
 
-    private int getLevelOrSpeed(){
+    private static int getLevelOrSpeed(){
         switch (User.userRank){
             case 0:
                 return PokemonUtils.randomizer(1,8);
@@ -32,12 +32,12 @@ public class PokemonCreator {
         return 0;
     }//will be used to get the level and speed respectively
 
-    private String getGender() {
-        int determiner = PokemonUtils.randomizer(0,1);
-        return determiner == 0 ? "Male" : "Female";
+    private static String getGender() {
+        int determiner = PokemonUtils.randomizer(1,2);
+        return determiner == 1 ? "Male" : "Female";
     }//will get the gender at random. If the randomizer calls 0 it returns male if it's 1 it returns female
 
-    public Object createPokemon(){
+    public static Pokemon createPokemon(){
         int evostage = 0;
         String name = getName();
 
