@@ -48,7 +48,7 @@ public class GameStructure {
     }
 
     public static void goToWildGrass(){
-        //This method will allow the user to search fro wild pokemon to catch
+        //This method will allow the user to search for wild pokemon to catch
     }
 
     public static void checkPokemon(){

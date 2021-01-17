@@ -31,7 +31,7 @@ public class PokemonCreator {
                 return PokemonUtils.randomizer(33,56);
         }
         return 0;
-    }//will be used to get the level and speed respectively
+    }//will be used to get the level and speed respectively. The number chosen will depend on the user's rank.
 
     private static String getGender() {
         int determiner = PokemonUtils.randomizer(1,2);
@@ -44,7 +44,7 @@ public class PokemonCreator {
 
         while (name.isEmpty()){
             name = getName();
-        }
+        }//this checks to see if the name is empty. If so it will keep on calling the get name emthod until it gets something
 
         for(String i : PokemonLists.evl1names){
             if (name.equals(i)) {
@@ -63,7 +63,6 @@ public class PokemonCreator {
                 evostage = 3;
             }
         }
-
         //these for each loops check to see if the name matches one of the names in the array lists at PokemonLists. If so it will use the list's evo stage to set the stage.
 
         return new Pokemon(100,getLevelOrSpeed(),getLevelOrSpeed(),evostage,name,getGender(),false);//this will return the object created.
