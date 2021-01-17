@@ -130,16 +130,5 @@ public class Pokemon {
     public void setV_name(String newName) {
         name = newName;
     }
-
-    public void setV_HPAndLV(int hp, int lvl) {
-        HP = hp;
-        level = lvl;
-    }
-
-    public void setGender() {
-        int tmp = (int) ( Math.random() * 2 + 1);
-        //gets a random number from 1-2
-        gender = tmp == 1 ? "Male" : "Female";
-        //sets the gender to male if 1 otherwise it's female
-    }
+    //will allow to change the pokemon's name
 }
