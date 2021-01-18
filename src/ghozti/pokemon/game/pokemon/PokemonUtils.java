@@ -51,24 +51,4 @@ public class PokemonUtils{
     * If the method captures an invalid input it will call itself again until the user does it right.
     * The method also has a cancel option. If the user enters -1 the method will end and go back to whatever comes next.
      */
-
-    public static void wildGrass(){
-        Pokemon pokemon = PokemonCreator.createPokemon();
-        Scanner scanner = new Scanner(System.in);
-        int choice;
-
-        System.out.println("***A WILD " + pokemon.name + " HAS APPEARED***");
-        System.out.println("***WHAT WILL YOU DO?***");
-        System.out.println("[1] battle \n" +
-                "[2] Flee");
-        try {
-            choice = scanner.nextInt();
-            while (choice != 1 || choice != 2){
-                System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-                choice = scanner.nextInt();
-            }
-        }catch (InputMismatchException e){
-            System.out.println("***THIS IS NOT AN INT***");
-        }
-    }
 }
