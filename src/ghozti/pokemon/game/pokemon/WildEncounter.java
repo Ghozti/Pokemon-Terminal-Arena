@@ -5,29 +5,36 @@ import java.util.Scanner;
 
 public class WildEncounter {
 
-    public static void pokemonEncounter(){
+    private static void encounterMenu(){
         Pokemon pokemon = PokemonCreator.createPokemon();
-        Scanner scanner = new Scanner(System.in);
-        int choice;
-        boolean valid = false;
 
         System.out.println("a wild " + pokemon.name + " has appeared!");
         System.out.println("***WHAT WILL YOU DO?***");
         System.out.println("[1] battle \n" +
                 "[2] Flee");
+
+    }//this will create the pokemon and print the menu
+
+    private static int getUserChoice(){
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;
+
         try {
-            while (!valid){
-                choice = scanner.nextInt();
-                if (choice == 1 || choice == 2){
-                    valid = true;
-                }else{
-                    System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-                }
+            choice = scanner.nextInt();
+
+            if (choice != 1 || choice != 2){
+                System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+                getUserChoice();
             }
         }catch (InputMismatchException e){
             System.out.println("***THIS IS NOT AN INT***");
-            choice = scanner.nextInt();
-
+            encounterMenu();
         }
+
+        return choice;
+    }//this will get the user's choice and check for invalid inputs
+
+    public void WildBattle(){
+
     }
 }
