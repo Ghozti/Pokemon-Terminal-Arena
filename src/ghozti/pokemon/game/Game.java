@@ -1,5 +1,6 @@
 package ghozti.pokemon.game;
 
+import ghozti.pokemon.game.battles.WildEncounter;
 import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.user.User;
 

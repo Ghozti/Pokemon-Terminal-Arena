@@ -127,8 +127,9 @@ public class Pokemon {
     They do not have enough of the item. Then it will recall itself.
      */
 
-    public void setV_name(String newName) {
+    public void setName(String newName) {
         name = newName;
     }
+
     //will allow to change the pokemon's name
 }

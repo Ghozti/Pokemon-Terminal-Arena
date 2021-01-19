@@ -1,5 +1,5 @@
 package ghozti.pokemon.game.battles;
 
-public class Battles {
+public class PlayerBattles {
     //TODO add all battle stuff
 }
