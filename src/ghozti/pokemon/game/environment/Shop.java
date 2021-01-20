@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class Shop {
 
-    private static int shopMenu(){
+    public static int shopMenu(){
         Scanner scanner = new Scanner(System.in);
         int choice;
         System.out.println("Welcome to the PokeCenter!, what would you like to buy?");
         System.out.println("***OPTIONS***");
-        String[] list = new String[6];
+        String[] list = new String[7];
 
         list[0] = "[1] Pokeball ($10 per ball)";
         list[1] = "[2] Great Ball ($20 per ball)";
@@ -35,13 +35,13 @@ public class Shop {
                 return choice;
             }else{
                 System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-                shopMenu();
+                choice = shopMenu();
             }
         }catch (InputMismatchException e){
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-            shopMenu();
+            choice = shopMenu();
         }
-        return 0;
+        return choice;//TODO  ***test this***
     }
     /*
         this method will print out all options that the user can choose from. And like other methods it will check for invalid inputs.

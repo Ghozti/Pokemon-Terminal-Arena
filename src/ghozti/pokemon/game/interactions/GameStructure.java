@@ -26,11 +26,16 @@ public class GameStructure {
         }
         System.out.println("Enter your choice: ");
 
-        choice = scanner.nextInt();
+        try {
+            choice = scanner.nextInt();
 
-        if (choice < 1 || choice > 6) {
+            if (choice < 1 || choice > 6) {
+                System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+                choice = optionMenu();
+            }
+        }catch (InputMismatchException e){
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-            optionMenu();
+            choice = optionMenu();
         }
 
         return choice;

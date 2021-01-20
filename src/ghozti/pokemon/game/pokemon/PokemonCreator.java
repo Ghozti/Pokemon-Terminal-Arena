@@ -44,7 +44,7 @@ public class PokemonCreator {
 
         while (name.isEmpty()){
             name = getName();
-        }//this checks to see if the name is empty. If so it will keep on calling the get name emthod until it gets something
+        }//this checks to see if the name is empty. If so it will keep on calling the get name method until it gets something
 
         for(String i : PokemonLists.evl1names){
             if (name.equals(i)) {
