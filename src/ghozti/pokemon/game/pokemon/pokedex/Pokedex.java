@@ -10,7 +10,7 @@ public class Pokedex {
     private ArrayList<String> pokemonUnlocks = new ArrayList<>();
 
     public Pokedex(){
-        //setNewName();
+        setNewName();
     }
 
     public void dexMenu(){
@@ -29,17 +29,17 @@ public class Pokedex {
     }
 
     public void addNewPokemon(String pokemonName){
-        pokemonUnlocks.add("[" + pokemonUnlocks.size() + "] " + pokemonName);
-        for (int i = 0; i < pokemonUnlocks.size(); i++) {
-            if (pokemonUnlocks.get(i).equals(pokemonName)) {
+        for (int i = 0; i < pokemonUnlocks.size(); i++){
+            if(pokemonName.equals(pokemonUnlocks.get(i))){
                 pokemonUnlocks.remove(i);
             }
         }
+        pokemonUnlocks.add(pokemonName);
     }
 
     public void printPokedex(){
         for (int i = 0; i < pokemonUnlocks.size(); i++){
-            System.out.println(pokemonUnlocks.get(i));
+            System.out.println("[" + i + "] " + pokemonUnlocks.get(i));
         }
     }
 }

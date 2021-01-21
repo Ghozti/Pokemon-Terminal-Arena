@@ -38,13 +38,13 @@ public class Game {
         pokedex.addNewPokemon("shdhs");
         pokedex.addNewPokemon("shdhs");
         pokedex.addNewPokemon("shdhs");
-        pokedex.addNewPokemon("shdhs");
-        pokedex.addNewPokemon("shdhs");
-        pokedex.addNewPokemon("shdhs");
-        pokedex.addNewPokemon("shdhs");
-        pokedex.addNewPokemon("shdhs");
-        pokedex.addNewPokemon("shdhs");
+        pokedex.addNewPokemon("no");
+        pokedex.addNewPokemon("test");
+        pokedex.addNewPokemon("test");
+        pokedex.addNewPokemon("lol");
+        pokedex.addNewPokemon("lol");
+        pokedex.addNewPokemon("lol");
         pokedex.printPokedex();
-        WildBattles.wildBattle();
+        //WildBattles.wildBattle();
     }
 }

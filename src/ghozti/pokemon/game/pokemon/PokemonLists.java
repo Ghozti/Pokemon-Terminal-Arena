@@ -16,9 +16,9 @@ public class PokemonLists {
         * then create the object
      */
 
-    protected static ArrayList<String> evl1names = new ArrayList<>();
-    protected static ArrayList<String> evl2names = new ArrayList<>();
-    protected static ArrayList<String> evl3names = new ArrayList<>();
+    public static ArrayList<String> evl1names = new ArrayList<>();
+    public static ArrayList<String> evl2names = new ArrayList<>();
+    public static ArrayList<String> evl3names = new ArrayList<>();
 
     public static void setAllnames(){
         setEvl1names();
