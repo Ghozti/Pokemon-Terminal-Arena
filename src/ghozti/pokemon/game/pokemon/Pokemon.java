@@ -94,6 +94,9 @@ public class Pokemon {
         System.out.println("What Will You Use?");
         System.out.println("***OR TYPE 0 TO EXIT***");
         //dialogue and printing
+
+        int chance = PokemonUtils.randomizer(0,100);
+
         try {
             int[] pokeballs = {0, User.pokeball, User.greatBall, User.ultraBall, User.masterBall, User.quickBall};
             int choice = scanner.nextInt();
