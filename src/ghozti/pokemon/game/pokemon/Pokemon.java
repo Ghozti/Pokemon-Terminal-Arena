@@ -48,23 +48,6 @@ public class Pokemon {
         return 0;
     }
 
-    public void battle(Pokemon pokemon) {
-        while(HP > 0 || pokemon.HP > 0){
-            System.out.println("Your Move!");
-            attack();
-            if(pokemon.HP <= 0){
-                System.out.println("You Won!");
-                break;
-            }
-            System.out.println("Opponents Move!");
-            pokemon.attack();
-            if(HP <= 0){
-                System.out.println("You Lost!");
-                break;
-            }
-        }
-    }
-
     // methods from PokemonMethods^
     // methods from PokemonUtils v
 

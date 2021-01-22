@@ -12,7 +12,7 @@ public class PokemonLists {
         * user rank level 1:
         * chances of spawning a fucking squirrel: 15%
         * chances of spawning something common : 85%
-        * get an randomizer to choose what to get
+        * get a randomizer to choose what to get
         * then create the object
      */
 
@@ -20,14 +20,18 @@ public class PokemonLists {
     public static ArrayList<String> evl2names = new ArrayList<>();
     public static ArrayList<String> evl3names = new ArrayList<>();
 
+    public static ArrayList<String> evl1moves = new ArrayList<>();
+    public static ArrayList<String> evl2moves = new ArrayList<>();
+    public static ArrayList<String> evl3moves = new ArrayList<>();
+
     public static void setAllnames(){
-        setEvl1names();
-        setEvl2names();
-        setEvl3names();
+        setEvl1namesAndMoves();
+        setEvl2namesAndMoves();
+        setEvl3namesAndMoves();
         //will call the set name methods and give data to the array lists
     }
 
-    private static void setEvl1names(){
+    private static void setEvl1namesAndMoves(){
         evl1names.add("Bulbasaur");
         evl1names.add("Charmander");
         evl1names.add("Squirtle");
@@ -49,9 +53,31 @@ public class PokemonLists {
         evl1names.add("Froakie");
         evl1names.add("Fletchling");
         //sets the names for the evolution 1 array list
+
+        evl1moves.add(" [1] Vine Whip \n [2] Poison Powder \n [3] Seed Bomb \n [4] Razor Leaf\n");
+        evl1moves.add(" [1] Growl \n [2] Dragon Rage \n [3] Flamethrower \n [4] Smokescreen\n");
+        evl1moves.add(" [1] Bubble \n [2] Hydro Pump \n [3] Protect \n [4] Tail Whip\n");
+        evl1moves.add(" [1] Tackle \n [2] String Shot \n [3] Bug Bite \n [4] Web Launch\n");
+        evl1moves.add(" [1] Thunder Shock \n [2] Charm \n [3] Sweet Kiss \n [4] Thunder Wave\n");
+        evl1moves.add(" [1] Sleep Powder \n [2] Acid \n [3] Slam \n [4] Stun Spore\n");
+        evl1moves.add(" [1] Magnitude \n [2] Bulldoze \n [3] Earthquake \n [4] Stone Edge\n");
+        evl1moves.add(" [1] Supersonic \n [2] Screech \n [3] Discharge \n [4] Flash Cannon\n");
+        evl1moves.add(" [1] Sucker Punch \n [2] Curse \n [3] Hypnosis \n [4] Dark Pulse\n");
+        evl1moves.add(" [1] Focus Screen \n [2] Bubble Bean \n [3] Hydro Pump \n [4] Dragon Dance\n");
+        evl1moves.add(" [1] Quick Attack \n [2] Mega Drain \n [3] Detect \n [4] Energy\n");
+        evl1moves.add(" [1] Focus Energy \n [2] Slash \n [3] Mirror Move \n [4] Flamethrower\n");
+        evl1moves.add(" [1] Mud-Slap \n [2] Whirlpool \n [3] Water Gun \n [4] Foresight \n");
+        evl1moves.add(" [1] Double Team \n [2] Heal Pulse \n [3] Charm \n [4] Dream Eater \n");
+        evl1moves.add(" [1] Peck \n [2] Whirlpool \n [3] Mist \n [4] Drill Peck \n");
+        evl1moves.add(" [1] Wing Attack \n [2] Aerial Ace \n [3] Brave Bird \n [4] Agility \n");
+        evl1moves.add(" [1] Spark \n [2] Bite \n [3] Scary Face \n [4] Wild Charge \n");
+        evl1moves.add(" [1] Lucky Chant \n [2] Ember \n [3] Fire Blast \n [4] Psyshock \n");
+        evl1moves.add(" ");
+        evl1moves.add(" ");
+        //sets the move names
     }
 
-    private static void setEvl2names(){
+    private static void setEvl2namesAndMoves(){
         evl2names.add("Ivysaur");
         evl2names.add("Charmeleon");
         evl2names.add("Wartortle");
@@ -73,9 +99,31 @@ public class PokemonLists {
         evl2names.add("Frogadier");
         evl2names.add("Fletchinder");
         //sets the names for the evolution 2 array list
+
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        evl2moves.add("");
+        //sets the move names
     }
 
-    private static void setEvl3names(){
+    private static void setEvl3namesAndMoves(){
         evl3names.add("Venusaur");
         evl3names.add("Charizard");
         evl3names.add("Blastoise");
@@ -97,5 +145,31 @@ public class PokemonLists {
         evl3names.add("Greninja");
         evl3names.add("Talonflame");
         //sets the names for the evolution 2 array list
+
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        evl3moves.add("");
+        //sets the move names
     }
 }
