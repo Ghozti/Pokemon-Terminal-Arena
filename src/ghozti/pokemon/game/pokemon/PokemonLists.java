@@ -72,8 +72,8 @@ public class PokemonLists {
         evl1moves.add(" [1] Wing Attack \n [2] Aerial Ace \n [3] Brave Bird \n [4] Agility \n");
         evl1moves.add(" [1] Spark \n [2] Bite \n [3] Scary Face \n [4] Wild Charge \n");
         evl1moves.add(" [1] Lucky Chant \n [2] Ember \n [3] Fire Blast \n [4] Psyshock \n");
-        evl1moves.add(" ");
-        evl1moves.add(" ");
+        evl1moves.add(" [1] Pound \n [2] Bounce \n [3] Hydro Pump \n [4] Bubble \n");
+        evl1moves.add(" [1] Peck \n [2] Natural Gift \n [3] Acrobatics \n [4] Me First \n");
         //sets the move names
     }
 
