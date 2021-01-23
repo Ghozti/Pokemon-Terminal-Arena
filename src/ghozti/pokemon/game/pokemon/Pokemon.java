@@ -24,27 +24,69 @@ public class Pokemon {
         //pokemon constructor
     }
 
-    public int move1() {
+    private int move1(int spd, int evostage, int lvl) {
+        switch (evostage){
+            case 1:
+                return (lvl + 15) + (spd - 12);
+            case 2:
+                return (lvl + 25) + (spd - 9);
+            case 3:
+                return (lvl + 35) + (spd - 5);
+        }
+        return 0;
+    }//move 1 done
+
+    private int move2(int spd, int evostage, int lvl) {
+        switch (evostage){
+            case 1:
+                return (spd + 13) + (lvl - 9);
+            case 2:
+                return (spd + 20) + (lvl - 4);
+            case 3:
+                return (spd + 28) + (lvl - 1);
+        }
+        return 0;
+    }//move 2 done
+
+    private int move3(int spd, int evostage, int lvl) {
+        switch (evostage){
+            case 1:
+                return (lvl + 15) + (lvl - 5);
+            case 2:
+                return (lvl + 25) + (lvl - 9);
+            case 3:
+                return (lvl + 35) + (lvl - 12);
+        }
         return 0;
     }
 
-    public int move2() {
+    private int move4(int spd, int evostage, int lvl) {
+        switch (evostage){
+            case 1:
+                return (lvl + 15) + (lvl - 5);
+            case 2:
+                return (lvl + 25) + (lvl - 9);
+            case 3:
+                return (lvl + 35) + (lvl - 12);
+        }
         return 0;
     }
 
-    public int move3() {
+    private int attack() {
         return 0;
     }
 
-    public int move4() {
-        return 0;
-    }
-
-    public int attack() {
-        return 0;
-    }
-
-    public int wildAttack() {
+    private int wildAttack() {
+        int moveChoice = PokemonUtils.randomizer(1,4);
+        if(moveChoice == 1){
+            return move1(speed,evolutionStage,level);
+        }else if(moveChoice == 2){
+            return move2(speed,evolutionStage,level);
+        }else if(moveChoice == 3){
+            return move3(speed,evolutionStage,level);
+        }else if(moveChoice == 4){
+            return move4(speed,evolutionStage,level);
+        }
         return 0;
     }
 

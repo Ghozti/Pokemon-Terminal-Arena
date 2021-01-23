@@ -31,34 +31,38 @@ public class WildBattles {
             choice = getUserChoice();
         }
         return choice;//TODO  ***test this***
-    }//this will get the user's choice and check for invalid inputs
+    }//this will get the user's choice and check for invalid inputs the method will make sure the user only enter 1 or 2
 
     public static void wildBattle(){
         Pokemon wildPokemon = BattleUtils.getPokemon();
+        //creates the wild pokemon obj
 
         encounterMenu(wildPokemon.name);
+        //calls the encounter menu and passes on the wild pokemon name for the wild menu
+
         int choice = getUserChoice();
+        //this will get the user's choice which be either 1 to fight or 2 to flee
 
         if(choice == 1){
+            //this will happen if the user chooses "1"
             Pokemon userPokemon = BattleUtils.getUPokemon();
-            for (String i : PokemonLists.evl1moves){
-                System.out.println(i);
-            }
+            //this will print the user's pokemon and ask the user to enter the index of their pokemon from the array list in User.java.
+
             while (userPokemon.HP > 0 || wildPokemon.HP > 0){
-                //System.out.println("Your move!");
+                System.out.println("Your move!");
                 //wildPokemon.HP -= userPokemon.getMove(); TODO add 2 methods. 1. prints the moves menu and the other prints 2. gets the move one of the moves should be the catched method
                 //userPokemon.HP -= wildPokemon.getMove(); TODO also add a wild move method that will randomly call one of the 4 possible moves
-                if(userPokemon.HP <= 0){
+                if(userPokemon.HP <= 0){//if the user's pokemon health is less than or equal to 0
                     System.out.println("***THE POKEMON DEFEATED YOUR POKEMON***");
-                    int defeatChoice = BattleUtils.defeatMenu();
-                    if (defeatChoice == 1){
-                        userPokemon = BattleUtils.getUPokemon();
-                    }else if (defeatChoice == 2){
+                    int defeatChoice = BattleUtils.defeatMenu();//will call the method to ask the user if they wish to call another pokemon or to flee
+                    if (defeatChoice == 1){//if the user chooses to call another pokemon
+                        userPokemon = BattleUtils.getUPokemon();//will replace the last user pokemon with a new object and continue the battle.
+                    }else if (defeatChoice == 2){//if the user admitted defeat
                         System.out.println("***YOU ADMITTED DEFEAT***");
-                        break;
+                        break;//will end the battle
                     }
-                }else if(wildPokemon.HP <= 0){
-                    System.out.println("***YOU DEFEATED THE " + wildPokemon.name.toUpperCase() + "***");
+                }else if(wildPokemon.HP <= 0){//if the wild pokemon's hp is <= 0
+                    System.out.println("***YOU DEFEATED THE " + wildPokemon.name.toUpperCase() + "***");//this will happen if the user kills the pokemon
                     //TODO add the xp and money adders
                     return;
                 }
@@ -66,8 +70,6 @@ public class WildBattles {
         }else{
             System.out.println("***YOU FLED***");
             return;
-        }
+        }//this will be the output if the user chose 2 from the beginning
     }
-
-    //TODO comment
 }
