@@ -49,8 +49,8 @@ public class WildBattles {
             //this will print the user's pokemon and ask the user to enter the index of their pokemon from the array list in User.java.
             while (userPokemon.HP > 0 || wildPokemon.HP > 0){
                 System.out.println("Your move!");
-                //wildPokemon.HP -= userPokemon.getMove(); //TODO add 2 methods. 1. prints the moves menu and the other prints 2. gets the move one of the moves should be the catched method
-                //userPokemon.HP -= wildPokemon.getMove(); //TODO also add a wild move method that will randomly call one of the 4 possible moves
+                wildPokemon.HP -= userPokemon.getMove(); //TODO add 2 methods. 1. prints the moves menu and the other prints 2. gets the move one of the moves should be the catched method
+                userPokemon.HP -= wildPokemon.getMove(); //TODO also add a wild move method that will randomly call one of the 4 possible moves
                 if(userPokemon.HP <= 0){//if the user's pokemon health is less than or equal to 0
                     System.out.println("***THE POKEMON DEFEATED YOUR POKEMON***");
                     int defeatChoice = BattleUtils.defeatMenu();//will call the method to ask the user if they wish to call another pokemon or to flee

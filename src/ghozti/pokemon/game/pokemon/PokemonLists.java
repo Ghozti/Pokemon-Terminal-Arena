@@ -98,6 +98,7 @@ public class PokemonLists {
         evl1moves.add(froakie);
         evl1moves.add(fletchling);
         //adds the arrays to the array lists
+        //TODO change this to be like the ones below. for now it works but this cannot stay in the final release
         //sets the move names
     }
 
