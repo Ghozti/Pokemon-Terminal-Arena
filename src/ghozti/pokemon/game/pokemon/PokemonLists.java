@@ -20,10 +20,11 @@ public class PokemonLists {
     public static ArrayList<String> evl2names = new ArrayList<>();
     public static ArrayList<String> evl3names = new ArrayList<>();
 
-    public static ArrayList<String> evl1moves = new ArrayList<>();
+    public static ArrayList<String[]> evl1moves = new ArrayList<>();
     public static ArrayList<String> evl2moves = new ArrayList<>();
     public static ArrayList<String> evl3moves = new ArrayList<>();
 
+    public static ArrayList<ArrayList<String>> test =  new ArrayList<>();
     public static void setAllnames(){
         setEvl1namesAndMoves();
         setEvl2namesAndMoves();
@@ -54,26 +55,70 @@ public class PokemonLists {
         evl1names.add("Fletchling");
         //sets the names for the evolution 1 array list
 
-        evl1moves.add(" [1] Vine Whip \n [2] Poison Powder \n [3] Seed Bomb \n [4] Razor Leaf\n");
-        evl1moves.add(" [1] Growl \n [2] Dragon Rage \n [3] Flamethrower \n [4] Smokescreen\n");
-        evl1moves.add(" [1] Bubble \n [2] Hydro Pump \n [3] Protect \n [4] Tail Whip\n");
-        evl1moves.add(" [1] Tackle \n [2] String Shot \n [3] Bug Bite \n [4] Web Launch\n");
-        evl1moves.add(" [1] Thunder Shock \n [2] Charm \n [3] Sweet Kiss \n [4] Thunder Wave\n");
-        evl1moves.add(" [1] Sleep Powder \n [2] Acid \n [3] Slam \n [4] Stun Spore\n");
-        evl1moves.add(" [1] Magnitude \n [2] Bulldoze \n [3] Earthquake \n [4] Stone Edge\n");
-        evl1moves.add(" [1] Supersonic \n [2] Screech \n [3] Discharge \n [4] Flash Cannon\n");
-        evl1moves.add(" [1] Sucker Punch \n [2] Curse \n [3] Hypnosis \n [4] Dark Pulse\n");
-        evl1moves.add(" [1] Focus Screen \n [2] Bubble Bean \n [3] Hydro Pump \n [4] Dragon Dance\n");
-        evl1moves.add(" [1] Quick Attack \n [2] Mega Drain \n [3] Detect \n [4] Energy\n");
-        evl1moves.add(" [1] Focus Energy \n [2] Slash \n [3] Mirror Move \n [4] Flamethrower\n");
-        evl1moves.add(" [1] Mud-Slap \n [2] Whirlpool \n [3] Water Gun \n [4] Foresight \n");
-        evl1moves.add(" [1] Double Team \n [2] Heal Pulse \n [3] Charm \n [4] Dream Eater \n");
-        evl1moves.add(" [1] Peck \n [2] Whirlpool \n [3] Mist \n [4] Drill Peck \n");
-        evl1moves.add(" [1] Wing Attack \n [2] Aerial Ace \n [3] Brave Bird \n [4] Agility \n");
-        evl1moves.add(" [1] Spark \n [2] Bite \n [3] Scary Face \n [4] Wild Charge \n");
-        evl1moves.add(" [1] Lucky Chant \n [2] Ember \n [3] Fire Blast \n [4] Psyshock \n");
-        evl1moves.add(" [1] Pound \n [2] Bounce \n [3] Hydro Pump \n [4] Bubble \n");
-        evl1moves.add(" [1] Peck \n [2] Natural Gift \n [3] Acrobatics \n [4] Me First \n");
+        //TODO create something to store 4 strings within a single array list per index
+        String[] bulbasaur = {" [1] Vine Whip"," [2] Poison Powder"," [3] Seed Bomb"," [4] Razor Leaf"};
+        String[] charmander = {" [1] Vine Whip"," [2] Poison Powder"," [3] Seed Bomb"," [4] Razor Leaf"};
+        String[] squirtle = {" [1] Bubble"," [2] Hydro Pump" ," [3] Protect"," [4] Tail Whip"};
+        String[] caterpie = {" [1] Tackle"," [2] String Shot"," [3] Bug Bite"," [4] Web Launch"};
+        String[] pichu = {" [1] Thunder Shock"," [2] Charm"," [3] Sweet Kiss"," [4] Thunder Wave"};
+        String[] bellSprout = {" [1] Sleep Powder"," [2] Acid"," [3] Slam "," [4] Stun Spore"};
+        String[] geodude = {" [1] Magnitude"," [2] Bulldoze"," [3] Earthquake"," [4] Stone Edge"};
+        String[] magnemite = {" [1] Supersonic", " [2] Screech", " [3] Discharge", " [4] Flash Cannon"};
+        String[] gastly = {" [1] Sucker Punch"," [2] Curse"," [3] Hypnosis"," [4] Dark Pulse"};
+        String[] horsea = {" [1] Focus Screen"," [2] Bubble Bean"," [3] Hydro Pump"," [4] Dragon Dance"};
+        String[] treecko = {" [1] Quick Attack"," [2] Mega Drain"," [3] Detect"," [4] Energy"};
+        String[] torchic = {" [1] Focus Energy","[2] Slash"," [3] Mirror Move"," [4] Flamethrower"};
+        String[] mudkip = {" [1] Mud-Slap,"," [2] Whirlpool"," [3] Water Gun"," [4] Foresight"};
+        String[] ralts = {" [1] Double Team"," [2] Heal Pulse"," [3] Charm"," [4] Dream Eater"};
+        String[] pilpup = {" [1] Peck"," [2] Whirlpool"," [3] Mist"," [4] Drill Peck"};
+        String[] starly = {" [1] Wing Attack"," [2] Aerial Ace"," [3] Brave Bird"," [4] Agility"};
+        String[] shinx = {" [1] Spark"," [2] Bite"," [3] Scary Face"," [4] Wild Charge"};
+        String[] fennekin = {" [1] Lucky Chant"," [2] Ember"," [3] Fire Blast"," [4] Psyshock"};
+        String[] froakie = {" [1] Pound"," [2] Bounce"," [3] Hydro Pump"," [4] Bubble"};
+        String[] fletchling = {" [1] Peck"," [2] Natural Gift"," [3] Acrobatics"," [4] Me First"};
+        //creates the array lists for the pokemon moves
+
+        evl1moves.add(bulbasaur);
+        evl1moves.add(charmander);
+        evl1moves.add(squirtle);
+        evl1moves.add(caterpie);
+        evl1moves.add(pichu);
+        evl1moves.add(bellSprout);
+        evl1moves.add(geodude);
+        evl1moves.add(magnemite);
+        evl1moves.add(gastly);
+        evl1moves.add(horsea);
+        evl1moves.add(treecko);
+        evl1moves.add(torchic);
+        evl1moves.add(mudkip);
+        evl1moves.add(ralts);
+        evl1moves.add(pilpup);
+        evl1moves.add(starly);
+        evl1moves.add(shinx);
+        evl1moves.add(fennekin);
+        evl1moves.add(froakie);
+        evl1moves.add(fletchling);
+
+        //evl1moves.add(" [1] Vine Whip \n [2] Poison Powder \n [3] Seed Bomb \n [4] Razor Leaf\n");
+        //evl1moves.add(" [1] Growl \n [2] Dragon Rage \n [3] Flamethrower \n [4] Smokescreen\n");
+        //evl1moves.add(" [1] Bubble \n [2] Hydro Pump \n [3] Protect \n [4] Tail Whip\n");
+        //evl1moves.add(" [1] Tackle \n [2] String Shot \n [3] Bug Bite \n [4] Web Launch\n");
+        //evl1moves.add(" [1] Thunder Shock \n [2] Charm \n [3] Sweet Kiss \n [4] Thunder Wave\n");
+        //evl1moves.add(" [1] Sleep Powder \n [2] Acid \n [3] Slam \n [4] Stun Spore\n");
+        //evl1moves.add(" [1] Magnitude \n [2] Bulldoze \n [3] Earthquake \n [4] Stone Edge\n");
+        //evl1moves.add(" [1] Supersonic \n [2] Screech \n [3] Discharge \n [4] Flash Cannon\n");
+        //evl1moves.add(" [1] Sucker Punch \n [2] Curse \n [3] Hypnosis \n [4] Dark Pulse\n");
+        //evl1moves.add(" [1] Focus Screen \n [2] Bubble Bean \n [3] Hydro Pump \n [4] Dragon Dance\n");
+        //evl1moves.add(" [1] Quick Attack \n [2] Mega Drain \n [3] Detect \n [4] Energy\n");
+        //evl1moves.add(" [1] Focus Energy \n [2] Slash \n [3] Mirror Move \n [4] Flamethrower\n");
+        //evl1moves.add(" [1] Mud-Slap \n [2] Whirlpool \n [3] Water Gun \n [4] Foresight \n");
+        //evl1moves.add(" [1] Double Team \n [2] Heal Pulse \n [3] Charm \n [4] Dream Eater \n");
+        //evl1moves.add(" [1] Peck \n [2] Whirlpool \n [3] Mist \n [4] Drill Peck \n");
+        //evl1moves.add(" [1] Wing Attack \n [2] Aerial Ace \n [3] Brave Bird \n [4] Agility \n");
+        //evl1moves.add(" [1] Spark \n [2] Bite \n [3] Scary Face \n [4] Wild Charge \n");
+        //evl1moves.add(" [1] Lucky Chant \n [2] Ember \n [3] Fire Blast \n [4] Psyshock \n");
+        //evl1moves.add(" [1] Pound \n [2] Bounce \n [3] Hydro Pump \n [4] Bubble \n");
+        //evl1moves.add(" [1] Peck \n [2] Natural Gift \n [3] Acrobatics \n [4] Me First \n");
         //sets the move names
     }
 

@@ -27,11 +27,11 @@ public class Pokemon {
     private int move1(int spd, int evostage, int lvl) {
         switch (evostage){
             case 1:
-                return (lvl + 15) + (spd - 12);
+                return (lvl + 15) - (spd + 5);
             case 2:
-                return (lvl + 25) + (spd - 9);
+                return (lvl + 25) - (spd + 9);
             case 3:
-                return (lvl + 35) + (spd - 5);
+                return (lvl + 35) - (spd + 12);
         }
         return 0;
     }//move 1 done
@@ -39,11 +39,11 @@ public class Pokemon {
     private int move2(int spd, int evostage, int lvl) {
         switch (evostage){
             case 1:
-                return (spd + 13) + (lvl - 9);
+                return (spd + 13) - (lvl + 1);
             case 2:
-                return (spd + 20) + (lvl - 4);
+                return (spd + 20) - (lvl + 4);
             case 3:
-                return (spd + 28) + (lvl - 1);
+                return (spd + 28) - (lvl + 9);
         }
         return 0;
     }//move 2 done
@@ -51,31 +51,48 @@ public class Pokemon {
     private int move3(int spd, int evostage, int lvl) {
         switch (evostage){
             case 1:
-                return (lvl + 15) + (lvl - 5);
+                return (lvl * 2) - (spd + 5);
             case 2:
-                return (lvl + 25) + (lvl - 9);
+                return (lvl * 2) - (spd + 8);
             case 3:
-                return (lvl + 35) + (lvl - 12);
+                return (lvl * 2) - (spd + 13);
         }
         return 0;
-    }
+    }//move 3 done
 
-    private int move4(int spd, int evostage, int lvl) {
+    private int move4(int evostage, int lvl,int hp) {
         switch (evostage){
             case 1:
-                return (lvl + 15) + (lvl - 5);
+                return (lvl - (hp - 5));
             case 2:
-                return (lvl + 25) + (lvl - 9);
+                return (lvl - (hp - 10));
             case 3:
-                return (lvl + 35) + (lvl - 12);
+                return (lvl - (hp - 15));
+        }
+        return 0;
+    }//move 4 done
+/*
+    public int getMove() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What will you use?");
+        //String moveName = getMovename();
+        //TODO create a pokemon move name getter
+        int choice = scanner.nextInt();
+
+        System.out.println("You used: " + moveName);
+        switch (move){
+            case 1:
+                return move1(speed,evolutionStage,level);
+            case 2:
+                return move2(speed,evolutionStage,level);
+            case 3:
+                return move3(speed,evolutionStage,level);
+            case 4:
+                return move4(evolutionStage,level,HP);
         }
         return 0;
     }
-
-    private int attack() {
-        return 0;
-    }
-
+ */
     private int wildAttack() {
         int moveChoice = PokemonUtils.randomizer(1,4);
         if(moveChoice == 1){
@@ -85,9 +102,21 @@ public class Pokemon {
         }else if(moveChoice == 3){
             return move3(speed,evolutionStage,level);
         }else if(moveChoice == 4){
-            return move4(speed,evolutionStage,level);
+            return move4(evolutionStage,level,HP);
         }
         return 0;
+    }
+
+    private String getMoveName(int evolutionStage, int pokemonIndex,int moveIndex){
+        switch (evolutionStage){
+            case 1:
+                //return PokemonLists.evl1moves.get();
+            case 2:
+                //return PokemonLists.evl2moves.get();
+            case 3:
+                //return PokemonLists.evl3moves.get();
+        }
+        return "";
     }
 
     // methods from PokemonMethods^
