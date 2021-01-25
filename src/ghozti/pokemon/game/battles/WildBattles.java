@@ -6,14 +6,9 @@ import java.util.Scanner;
 
 public class WildBattles {
 
-    private static void encounterMenu(String name,int health,int level,String gender,int evolutionStage,int speed){
-        System.out.println("A wild " + name + " has appeared!");
-        System.out.println("Opponent's stats: \n" +
-                "[health: " + health + "]\n" +
-                "[level: " + level + "]\n" +
-                "[gender: " + gender + "]\n" +
-                "[Evolution Stage: " + evolutionStage + "]\n" +
-                "[speed: " + speed + "]");
+    private static void encounterMenu(Pokemon pokemon){
+        System.out.println("A wild " + pokemon.name + " has appeared!");
+        pokemon.printStats();
         System.out.println("***WHAT WILL YOU DO?***");
         System.out.println("[1] battle \n" +
                 "[2] Flee");
@@ -41,7 +36,7 @@ public class WildBattles {
         Pokemon wildPokemon = BattleUtils.getPokemon();
         //creates the wild pokemon obj
 
-        encounterMenu(wildPokemon.name,wildPokemon.HP,wildPokemon.level,wildPokemon.gender,wildPokemon.evolutionStage,wildPokemon.speed);
+        encounterMenu(wildPokemon);
         //calls the encounter menu and passes on the wild pokemon name for the wild menu
 
         int choice = getUserChoice();

@@ -10,9 +10,13 @@ public class PokemonUtils{
         return (int) ( Math.random() * num2 + num);
     }//this util can be used anywhere. It will create random number in between whatever numbers specified in the argument
 
-    public static void printPokemon(){
+    public static void printPokemon(boolean explicit){
         for (int i = 0; i < User.pokemons.size(); i++) {
             System.out.println("[ " + i + " ]" + "" + User.pokemons.get(i).name);
+            if (explicit) {
+                User.pokemons.get(i).printStats();
+                System.out.println("");
+            }
         }
         //will print pokemon
     }
@@ -26,7 +30,7 @@ public class PokemonUtils{
     public static void removePokemon(){
         try {
             Scanner scanner = new Scanner(System.in);
-            printPokemon();
+            printPokemon(false);
             System.out.println("***Enter the index of the pokemon that you want to remove***");
             System.out.println("***Or Enter [-1] to cancel***");
             try {

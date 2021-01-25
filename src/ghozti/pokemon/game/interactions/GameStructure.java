@@ -59,7 +59,7 @@ public class GameStructure {
     public static void checkPokemon(){
         Scanner scanner = new Scanner(System.in);
 
-        PokemonUtils.printPokemon();
+        PokemonUtils.printPokemon(false);
         System.out.println("***PRINT MORE DETAILS?***");
         System.out.println("[1] yes\n" + "[2] no");
 
@@ -74,16 +74,7 @@ public class GameStructure {
             boolean printDetails = choice == 1 ? true : false;
 
             if (printDetails) {
-                for (int i = 0; i < User.pokemons.size(); i++) {
-                    System.out.println("[ " + i + " ]" + "" + User.pokemons.get(i).name);
-                    System.out.println("[HP]" + "" + User.pokemons.get(i).HP);
-                    System.out.println("[Level]" + "" + User.pokemons.get(i).level);
-                    System.out.println("[Speed]" + "" + User.pokemons.get(i).speed);
-                    System.out.println("[Evolve Stage]" + "" + User.pokemons.get(i).evolutionStage);
-                    System.out.println("[Name]" + "" + User.pokemons.get(i).name);
-                    System.out.println("[Gender]" + "" + User.pokemons.get(i).gender);
-                    System.out.println("");
-                }
+                PokemonUtils.printPokemon(true);
             }
         }catch (InputMismatchException e){
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");

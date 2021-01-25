@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class User {
 
-    public static int userRank;
+    public static int userRank = 3;
     //this will be the user's rank which will be put to use for different difficulties.
     public static int userXP;
     //this will hold the amount of XP the user has

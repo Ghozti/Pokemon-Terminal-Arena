@@ -142,6 +142,24 @@ public class Pokemon {
         return "";
     }
 
+    public void printStats(){
+        if(!catched){
+            System.out.println("Opponent's stats: \n" +
+                    "[health: " + HP + "]\n" +
+                    "[level: " + level + "]\n" +
+                    "[gender: " + gender + "]\n" +
+                    "[Evolution Stage: " + evolutionStage + "]\n" +
+                    "[speed: " + speed + "]");
+        }else {
+            System.out.println("Your stats: \n" +
+                    "[health: " + HP + "]\n" +
+                    "[level: " + level + "]\n" +
+                    "[gender: " + gender + "]\n" +
+                    "[Evolution Stage: " + evolutionStage + "]\n" +
+                    "[speed: " + speed + "]");
+        }
+    }
+
     public void printMoves(){
         int pokemonIndex = 0;
 
