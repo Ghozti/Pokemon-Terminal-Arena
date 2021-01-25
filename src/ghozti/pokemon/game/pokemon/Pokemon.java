@@ -27,11 +27,11 @@ public class Pokemon {
     private int move1(){
         switch (evolutionStage){
             case 1:
-                return (level + 15) - (speed + 5);
+                return 0;//(level + 15) - (speed + 5);
             case 2:
-                return (level + 25) - (speed + 9);
+                return 0;//(level + 25) - (speed + 9);
             case 3:
-                return (level + 35) - (speed + 12);
+                return 0;//(level + 35) - (speed + 12);
         }
         return 0;
     }//move 1 done
@@ -39,11 +39,11 @@ public class Pokemon {
     private int move2(){
         switch (evolutionStage){
             case 1:
-                return (speed + 13) - (level + 1);
+                return 1;//(speed + 13) - (level + 1);
             case 2:
-                return (speed + 20) - (level + 4);
+                return 1;//(speed + 20) - (level + 4);
             case 3:
-                return (speed + 28) - (level + 9);
+                return 1;//(speed + 28) - (level + 9);
         }
         return 0;
     }//move 2 done
@@ -51,11 +51,11 @@ public class Pokemon {
     private int move3(){
         switch (evolutionStage){
             case 1:
-                return (level * 2) - (speed + 5);
+                return 5;//(level * 2) - (speed + 5);
             case 2:
-                return (level * 2) - (speed + 8);
+                return 5;//(level * 2) - (speed + 8);
             case 3:
-                return (level * 2) - (speed + 13);
+                return 5;//(level * 2) - (speed + 13);
         }
         return 0;
     }//move 3 done
@@ -63,38 +63,45 @@ public class Pokemon {
     private int move4(){
         switch (evolutionStage){
             case 1:
-                return (level - (HP - 5));
+                return 10;//(level - (HP - 5));
             case 2:
-                return (level - (HP - 10));
+                return 10;//(level - (HP - 10));
             case 3:
-                return (level - (HP - 15));
+                return 10;//(level - (HP - 15));
         }
         return 0;
     }//move 4 done
 
     public int getMove(){
+        int choice;
         Scanner scanner = new Scanner(System.in);
         System.out.println("What will you use?");
         printMoves();
-        int choice = scanner.nextInt();
-        String moveName = getMoveName(choice);
+        try {
+            choice = scanner.nextInt();
 
-        System.out.println("You used: " + moveName);
-        switch (choice){
-            case 1:
-                return move1();
-            case 2:
-                return move2();
-            case 3:
-                return move3();
-            case 4:
-                return move4();
+            String moveName = getMoveName(choice);
+
+            System.out.println("You used: " + moveName);
+            switch (choice){
+                case 1:
+                    return move1();
+                case 2:
+                    return move2();
+                case 3:
+                    return move3();
+                case 4:
+                    return move4();
+            }
+        }catch (InputMismatchException e){
+            System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
         }
-        return 0;
+        return getMove();
     }
 
-    private int wildAttack(){
+    public int wildAttack(){
         int moveChoice = PokemonUtils.randomizer(1,4);
+        System.out.println("Your opponent used: " + getMoveName(moveChoice));
         if(moveChoice == 1){
             return move1();
         }else if(moveChoice == 2){
