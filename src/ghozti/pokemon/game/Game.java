@@ -11,10 +11,12 @@ public class Game {
     }
 
     private void start(){
-        User.pokemons.add(new Pokemon(0,1,1,1,"nsm","uw",true));
+        User.pokemons.add(new Pokemon(0,1,1,3,"Talonflame","uw",true));
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
 
+        PokemonLists.setAllnames();
+        User.pokemons.get(0).getMove();
         //WildBattles.wildBattle();
     }
 }

@@ -24,7 +24,7 @@ public class Pokemon {
         //pokemon constructor
     }
 
-    private int move1() {
+    private int move1(){
         switch (evolutionStage){
             case 1:
                 return (level + 15) - (speed + 5);
@@ -36,7 +36,7 @@ public class Pokemon {
         return 0;
     }//move 1 done
 
-    private int move2() {
+    private int move2(){
         switch (evolutionStage){
             case 1:
                 return (speed + 13) - (level + 1);
@@ -48,7 +48,7 @@ public class Pokemon {
         return 0;
     }//move 2 done
 
-    private int move3() {
+    private int move3(){
         switch (evolutionStage){
             case 1:
                 return (level * 2) - (speed + 5);
@@ -60,7 +60,7 @@ public class Pokemon {
         return 0;
     }//move 3 done
 
-    private int move4() {
+    private int move4(){
         switch (evolutionStage){
             case 1:
                 return (level - (HP - 5));
@@ -72,10 +72,10 @@ public class Pokemon {
         return 0;
     }//move 4 done
 
-    public int getMove() {
+    public int getMove(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("What will you use?");
-        //print moves
+        printMoves();
         int choice = scanner.nextInt();
         String moveName = getMoveName(choice);
 
@@ -93,7 +93,7 @@ public class Pokemon {
         return 0;
     }
 
-    private int wildAttack() {
+    private int wildAttack(){
         int moveChoice = PokemonUtils.randomizer(1,4);
         if(moveChoice == 1){
             return move1();
@@ -108,50 +108,46 @@ public class Pokemon {
     }
 
     private String getMoveName(int moveIndex){//the evolution stage will determine which array list to get, the pokeIndex will determine the pokemon and the moveIndex will fetermine just that
-        int pokemonIndex = 0;
 
         switch (evolutionStage){
             case 1:
                 for (int i = 0; i < PokemonLists.evl1names.size(); i ++){
                     if(name.equals(PokemonLists.evl1names.get(i))){
-                        pokemonIndex = i;
-                        break;
+                        return PokemonLists.evl1moves.get(i)[moveIndex-1];
                     }
                 }
-                return PokemonLists.evl1moves.get(pokemonIndex)[moveIndex];
+                break;
             case 2:
                 for (int i = 0; i < PokemonLists.evl2names.size(); i ++){
                     if(name.equals(PokemonLists.evl2names.get(i))){
-                        pokemonIndex = i;
-                        break;
+                        return PokemonLists.evl2moves.get(i)[moveIndex-1];
                     }
                 }
-                return PokemonLists.evl2moves.get(pokemonIndex)[moveIndex];
+                break;
             case 3:
                 for (int i = 0; i < PokemonLists.evl3names.size(); i ++){
                     if(name.equals(PokemonLists.evl3names.get(i))){
-                        pokemonIndex = i;
-                        break;
+                        return PokemonLists.evl3moves.get(i)[moveIndex-1];
                     }
                 }
-                return PokemonLists.evl3moves.get(pokemonIndex)[moveIndex];
+                break;
         }
         return "";
     }
 
     public void printMoves(){
         int pokemonIndex = 0;
+
         switch (evolutionStage){
             case 1:
                 for (int i = 0; i < PokemonLists.evl1names.size(); i ++){
                     if(name.equals(PokemonLists.evl1names.get(i))){
                         pokemonIndex = i;
-                        break;
+                        for (int a = 0; a < PokemonLists.evl1moves.get(pokemonIndex).length; a++){
+                            System.out.println(PokemonLists.evl1moves.get(pokemonIndex)[a]);
+                        }
+                        return;
                     }
-                }
-
-                for (int i = 0; i < PokemonLists.evl1moves.get(pokemonIndex).length; i ++){
-                    System.out.println(PokemonLists.evl1moves.get(pokemonIndex)[i]);
                 }
                 break;
 
@@ -159,12 +155,11 @@ public class Pokemon {
                 for (int i = 0; i < PokemonLists.evl2names.size(); i ++){
                     if(name.equals(PokemonLists.evl2names.get(i))){
                         pokemonIndex = i;
-                        break;
+                        for (int a = 0; a < PokemonLists.evl2moves.get(pokemonIndex).length; a++){
+                            System.out.println(PokemonLists.evl2moves.get(pokemonIndex)[a]);
+                        }
+                        return;
                     }
-                }
-
-                for (int i = 0; i < PokemonLists.evl2moves.get(pokemonIndex).length; i ++){
-                    System.out.println(PokemonLists.evl2moves.get(pokemonIndex)[i]);
                 }
                 break;
 
@@ -172,12 +167,11 @@ public class Pokemon {
                 for (int i = 0; i < PokemonLists.evl3names.size(); i ++){
                     if(name.equals(PokemonLists.evl3names.get(i))){
                         pokemonIndex = i;
-                        break;
+                        for (int a = 0; a < PokemonLists.evl3moves.get(pokemonIndex).length; a++){
+                            System.out.println(PokemonLists.evl3moves.get(pokemonIndex)[a]);
+                        }
+                        return;
                     }
-                }
-
-                for (int i = 0; i < PokemonLists.evl3moves.get(pokemonIndex).length; i ++){
-                    System.out.println(PokemonLists.evl3moves.get(pokemonIndex)[i]);
                 }
                 break;
         }
@@ -186,7 +180,7 @@ public class Pokemon {
     // methods from PokemonMethods^
     // methods from PokemonUtils v
 
-    public void checkForMaxlevel() {
+    public void checkForMaxlevel(){
         if(level > 100) level = 100;
         //this will check to see if the level is over 100. If so it will set it back to 100
     }
@@ -204,7 +198,7 @@ public class Pokemon {
          */
     }
 
-    public void catchPokemon() {
+    public void catchPokemon(){
         Scanner scanner = new Scanner(System.in);
         //scanner object
         System.out.println("To Try To Catch This Pokemon You Must Use A Ball!");
@@ -248,7 +242,7 @@ public class Pokemon {
     They do not have enough of the item. Then it will recall itself.
      */
 
-    public void setName(String newName) {
+    public void setName(String newName){
         name = newName;
     }
 

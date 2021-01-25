@@ -191,7 +191,7 @@ public class PokemonLists {
         evl3moves.add(new String[] {" [1] Thunder Wave\n [2] Wild Charge \n [3] Electric Terrain \n [4] Night Slash \n"});
         evl3moves.add(new String[] {" [1] Fire Blast\n [2] Flamethrower \n [3] Fire Spin \n [4] Ember \n"});
         evl3moves.add(new String[] {" [1] Quick Attack\n [2] Spikes \n [3] Hydro Pump \n [4] Night Slash \n"});
-        evl3moves.add(new String[] {" [1] Flare Blitz\n [2] Steel Wing \n [3] Ember \n [4] Flame Charge \n"});
+        evl3moves.add(new String[] {" [1] Flare Blitz"," [2] Steel Wing "," [3] Ember "," [4] Flame Charge"});
         //sets the move names
     }
 }
