@@ -125,26 +125,26 @@ public class PokemonLists {
         evl2names.add("Fletchinder");
         //sets the names for the evolution 2 array list
 
-        evl2moves.add(new String[] {" [1] Vine Whip \n [2] Power Whip \n [3] Razor Leaf \n [4] Growl \n"});
-        evl2moves.add(new String[] {" [1] Dragon Rage \n [2] Fire Spin \n [3] Ember \n [4] Growl \n"});
-        evl2moves.add(new String[] {" [1] Iron Defense \n [2] Rain Dance \n [3] Rapid Spin \n [4] Skull Bash \n"});
-        evl2moves.add(new String[] {" [1] Harden \n [2] Harden \n [3] Harden \n [4] Harden \n"});
-        evl2moves.add(new String[] {" [1] Thunder Bolt \n [2] Scratch \n [3] Quick Attack \n [4] Double Team \n"});
-        evl2moves.add(new String[] {" [1] Sleep Power \n [2] Knock Off \n [3] Sweet Scent \n [4] Stun Spore \n "});
-        evl2moves.add(new String[] {" [1] Take Down \n [2] Sand Attack \n [3] Self-Destruct \n [4] Explosion \n"});
-        evl2moves.add(new String[] {" [1] Zap Cannon \n [2] Magnet Bomb \n [3] Spark \n [4] Flash Cannon \n "});
-        evl2moves.add(new String[] {" [1] Shadow Ball \n [2] Dream Eater \n [3] Dark Pulse \n [4] Hex \n"});
-        evl2moves.add(new String[] {" [1] Leer \n [2] Brine \n [3] Focus Energy \n [4] Twister \n"});
-        evl2moves.add(new String[] {" [1] Pound \n [2] Detect \n [3] False Swipe \n [4] Pursuit \n"});
-        evl2moves.add(new String[] {" [1] Bulk Up \n [2] Sky Uppercut \n [3] Sand Attack \n [4] Double Kick \n"});
-        evl2moves.add(new String[] {" [1] Protect \n [2] Mud Shot \n [3] Foresight \n [4] Bide \n"});
-        evl2moves.add(new String[] {" [1] Growl \n [2] Hypnosis \n [3] Draining Kiss \n [4] Teleport \n"});
-        evl2moves.add(new String[] {" [1] Metal Claw \n [2] Whirlpool \n [3] Fury Attack \n [4] Water Sport \n"});
-        evl2moves.add(new String[] {" [1] Brave Bird \n [2] Final Gambit \n [3] Endeavor \n [4] Take Down \n"});
-        evl2moves.add(new String[] {" [1] Crunch \n [2] Bite \n [3] Thunder Fang \n [4] Discharge \n"});
-        evl2moves.add(new String[] {" [1] Will-O-Wisp \n [2] Magic Room \n [3] Sunny Day \n [4] Tail Whip \n"});
-        evl2moves.add(new String[] {" [1] Bubble \n [2] Smokescreen \n [3] Lick \n [4] Pound \n "});
-        evl2moves.add(new String[] {" [1] Tailwind \n [2] Razor Wind \n [3] Flail \n [4] Flame Charge \n"});
+        evl2moves.add(new String[] {" [1] Vine Whip"," [2] Power Whip"," [3] Razor Leaf"," [4] Growl"});
+        evl2moves.add(new String[] {" [1] Dragon Rage"," [2] Fire Spin"," [3] Ember"," [4] Growl"});
+        evl2moves.add(new String[] {" [1] Iron Defense"," [2] Rain Dance"," [3] Rapid Spin"," [4] Skull Bash"});
+        evl2moves.add(new String[] {" [1] Harden"," [2] Harden"," [3] Harden"," [4] Harden"});
+        evl2moves.add(new String[] {" [1] Thunder Bolt"," [2] Scratch"," [3] Quick Attack"," [4] Double Team"});
+        evl2moves.add(new String[] {" [1] Sleep Power"," [2] Knock Off"," [3] Sweet Scent"," [4] Stun Spore"});
+        evl2moves.add(new String[] {" [1] Take Down"," [2] Sand Attack"," [3] Self-Destruct"," [4] Explosion"});
+        evl2moves.add(new String[] {" [1] Zap Cannon"," [2] Magnet Bomb"," [3] Spark"," [4] Flash Cannon"});
+        evl2moves.add(new String[] {" [1] Shadow Ball"," [2] Dream Eater"," [3] Dark Pulse"," [4] Hex"});
+        evl2moves.add(new String[] {" [1] Leer"," [2] Brine"," [3] Focus Energy"," [4] Twister"});
+        evl2moves.add(new String[] {" [1] Pound"," [2] Detect"," [3] False Swipe"," [4] Pursuit"});
+        evl2moves.add(new String[] {" [1] Bulk Up"," [2] Sky Uppercut"," [3] Sand Attack"," [4] Double Kick"});
+        evl2moves.add(new String[] {" [1] Protect"," [2] Mud Shot"," [3] Foresight"," [4] Bide"});
+        evl2moves.add(new String[] {" [1] Growl"," [2] Hypnosis"," [3] Draining Kiss"," [4] Teleport"});
+        evl2moves.add(new String[] {" [1] Metal Claw"," [2] Whirlpool"," [3] Fury Attack"," [4] Water Sport"});
+        evl2moves.add(new String[] {" [1] Brave Bird"," [2] Final Gambit"," [3] Endeavor"," [4] Take Down"});
+        evl2moves.add(new String[] {" [1] Crunch"," [2] Bite"," [3] Thunder Fang"," [4] Discharge"});
+        evl2moves.add(new String[] {" [1] Will-O-Wisp"," [2] Magic Room"," [3] Sunny Day"," [4] Tail Whip"});
+        evl2moves.add(new String[] {" [1] Bubble"," [2] Smokescreen"," [3] Lick"," [4] Pound "});
+        evl2moves.add(new String[] {" [1] Tailwind"," [2] Razor Wind"," [3] Flail"," [4] Flame Charge"});
         //faster way to do the array stuff
         //sets the move names
     }
@@ -172,25 +172,25 @@ public class PokemonLists {
         evl3names.add("Talonflame");
         //sets the names for the evolution 2 array list
 
-        evl3moves.add(new String[] {" [1] Petal Blizzard\n [2] Razor Leaf \n [3] Take Down \n [4] Solar Beam \n"});
-        evl3moves.add(new String[] {" [1] Fire Fang\n [2] Flamethrower \n [3] Inferno \n [4] Dragon Claw \n"});
-        evl3moves.add(new String[] {" [1] Hydro Pump\n [2] Water Gun \n [3] Flash Cannon \n [4] Shell Smash \n"});
-        evl3moves.add(new String[] {" [1] Bug Bite\n [2] String Shot \n [3] Air Slash \n [4] Tackle \n"});
-        evl3moves.add(new String[] {" [1] Electro Ball\n [2] Quick Attack \n [3] Thunder \n [4] Thunderbolt \n"});
-        evl3moves.add(new String[] {" [1] Vine Whip\n [2] Sucker Punch \n [3] Acid \n [4] Power Whip \n"});
-        evl3moves.add(new String[] {" [1] Defense Curl \n [2] Explosion \n [3] Stone Edge \n [4] Smack Down \n"});
-        evl3moves.add(new String[] {" [1] Gyro Ball \n [2] Magnetic Flux \n [3] Magnet Bomb \n [4] Metal Sound \n"});
-        evl3moves.add(new String[] {" [1] Shadow Punch \n [2] Destiny Bond \n [3] Dream Eater \n [4] Confused Ray \n"});
-        evl3moves.add(new String[] {" [1] Dragon Vortex \n [2] Tri Bullet \n [3] Hydro Pump \n [4] Brine \n"});
-        evl3moves.add(new String[] {" [1] Night Slash \n [2] X-Scissor \n [3] Leaf Storm \n [4] Detect \n"});
-        evl3moves.add(new String[] {" [1] Jump Kick \n [2] Brave Bird \n [3] Flare Blitz \n [4] Scratch \n"});
-        evl3moves.add(new String[] {" [1] Water Gun \n [2] Protect \n [3] Hammer Arm \n [4] Muddy Water \n"});
-        evl3moves.add(new String[] {" [1] Moonblast\n [2] Psychic \n [3] Dream Eater \n [4] Draining Kiss \n"});
-        evl3moves.add(new String[] {" [1] Peck\n [2] Aqua Jet \n [3] Fury Attack \n [4] Metal Claw \n"});
-        evl3moves.add(new String[] {" [1] Wing Attack\n [2] Take Down \n [3] Endeavor \n [4] Close Combat \n"});
-        evl3moves.add(new String[] {" [1] Thunder Wave\n [2] Wild Charge \n [3] Electric Terrain \n [4] Night Slash \n"});
-        evl3moves.add(new String[] {" [1] Fire Blast\n [2] Flamethrower \n [3] Fire Spin \n [4] Ember \n"});
-        evl3moves.add(new String[] {" [1] Quick Attack\n [2] Spikes \n [3] Hydro Pump \n [4] Night Slash \n"});
+        evl3moves.add(new String[] {" [1] Petal Blizzard"," [2] Razor Leaf"," [3] Take Down"," [4] Solar Beam"});
+        evl3moves.add(new String[] {" [1] Fire Fang"," [2] Flamethrower"," [3] Inferno"," [4] Dragon Claw"});
+        evl3moves.add(new String[] {" [1] Hydro Pump"," [2] Water Gun"," [3] Flash Cannon"," [4] Shell Smash"});
+        evl3moves.add(new String[] {" [1] Bug Bite"," [2] String Shot"," [3] Air Slash"," [4] Tackle"});
+        evl3moves.add(new String[] {" [1] Electro Ball"," [2] Quick Attack"," [3] Thunder"," [4] Thunderbolt"});
+        evl3moves.add(new String[] {" [1] Vine Whip"," [2] Sucker Punch"," [3] Acid"," [4] Power Whip"});
+        evl3moves.add(new String[] {" [1] Defense Curl"," [2] Explosion"," [3] Stone Edge"," [4] Smack Down"});
+        evl3moves.add(new String[] {" [1] Gyro Ball"," [2] Magnetic Flux"," [3] Magnet Bomb"," [4] Metal Sound"});
+        evl3moves.add(new String[] {" [1] Shadow Punch"," [2] Destiny Bond"," [3] Dream Eater"," [4] Confused Ray"});
+        evl3moves.add(new String[] {" [1] Dragon Vortex"," [2] Tri Bullet"," [3] Hydro Pump"," [4] Brine"});
+        evl3moves.add(new String[] {" [1] Night Slash"," [2] X-Scissor"," [3] Leaf Storm"," [4] Detect"});
+        evl3moves.add(new String[] {" [1] Jump Kick"," [2] Brave Bird"," [3] Flare Blitz"," [4] Scratch"});
+        evl3moves.add(new String[] {" [1] Water Gun"," [2] Protect"," [3] Hammer Arm"," [4] Muddy Water"});
+        evl3moves.add(new String[] {" [1] Moonblast"," [2] Psychic"," [3] Dream Eater"," [4] Draining Kiss"});
+        evl3moves.add(new String[] {" [1] Peck"," [2] Aqua Jet "," [3] Fury Attack"," [4] Metal Claw"});
+        evl3moves.add(new String[] {" [1] Wing Attack"," [2] Take Down"," [3] Endeavor"," [4] Close Combat"});
+        evl3moves.add(new String[] {" [1] Thunder Wave"," [2] Wild Charge"," [3] Electric Terrain"," [4] Night Slash"});
+        evl3moves.add(new String[] {" [1] Fire Blast"," [2] Flamethrower"," [3] Fire Spin"," [4] Ember"});
+        evl3moves.add(new String[] {" [1] Quick Attack"," [2] Spikes"," [3] Hydro Pump"," [4] Night Slash"});
         evl3moves.add(new String[] {" [1] Flare Blitz"," [2] Steel Wing "," [3] Ember "," [4] Flame Charge"});
         //sets the move names
     }

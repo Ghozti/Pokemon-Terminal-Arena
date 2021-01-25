@@ -1,8 +1,6 @@
 package ghozti.pokemon.game.battles;
 
 import ghozti.pokemon.game.pokemon.Pokemon;
-import ghozti.pokemon.game.pokemon.PokemonLists;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
