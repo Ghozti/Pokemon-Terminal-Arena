@@ -46,9 +46,9 @@ public class WildBattles {
             //this will happen if the user chooses "1"
             Pokemon userPokemon = BattleUtils.getUPokemon();
             //this will print the user's pokemon and ask the user to enter the index of their pokemon from the array list in User.java.
-            while (userPokemon.HP > 0 || wildPokemon.HP > 0){
+            while (userPokemon.HP > 0 || wildPokemon.HP > 0 || wildPokemon.catched){
                 System.out.println("Your move!");
-                wildPokemon.HP -= userPokemon.getMove();
+                wildPokemon.HP -= userPokemon.getMove(wildPokemon,true);
                 System.out.println("Your opponent's health: " + wildPokemon.HP);
                 userPokemon.HP -= wildPokemon.wildAttack();
                 System.out.println("Your pokemon's health: " + userPokemon.HP);
@@ -69,7 +69,6 @@ public class WildBattles {
             }
         }else{
             System.out.println("***YOU FLED***");
-            return;
         }//this will be the output if the user chose 2 from the beginning
     }
 }

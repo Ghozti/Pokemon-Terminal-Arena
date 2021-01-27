@@ -16,5 +16,6 @@ public class Game {
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
 
         WildBattles.wildBattle();
+        //TODO comment on all of the classes. Specifically pokemonUtils, Pokemon, WildBattles,PokemonCreator, Game structure, Usermethods, Battleutils.
     }
 }

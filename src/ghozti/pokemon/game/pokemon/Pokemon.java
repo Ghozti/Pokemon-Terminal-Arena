@@ -1,5 +1,6 @@
 package ghozti.pokemon.game.pokemon;
 
+import ghozti.pokemon.game.constants.Constants;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 import java.util.InputMismatchException;
@@ -10,7 +11,7 @@ public class Pokemon {
     final private int maxHP = 100;
 
     public int HP, level, speed, evolutionStage;
-    public String name,gender;
+    public String name,nickName,gender;
     public boolean catched;
 
     public Pokemon(int hp, int lvl, int spd,int evolutionStage, String nm, String gndr, Boolean ctch) {
@@ -72,33 +73,6 @@ public class Pokemon {
         return 0;
     }//move 4 done
 
-    public int getMove(){
-        int choice;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("What will you use?");
-        printMoves();
-        try {
-            choice = scanner.nextInt();
-
-            String moveName = getMoveName(choice);
-
-            System.out.println("You used: " + moveName);
-            switch (choice){
-                case 1:
-                    return move1();
-                case 2:
-                    return move2();
-                case 3:
-                    return move3();
-                case 4:
-                    return move4();
-            }
-        }catch (InputMismatchException e){
-            System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-        }
-        return getMove();
-    }
-
     public int wildAttack(){
         int moveChoice = PokemonUtils.randomizer(1,4);
         System.out.println("Your opponent used: " + getMoveName(moveChoice));
@@ -114,7 +88,48 @@ public class Pokemon {
         return 0;
     }
 
-    private String getMoveName(int moveIndex){//the evolution stage will determine which array list to get, the pokeIndex will determine the pokemon and the moveIndex will fetermine just that
+    public int getMove(Pokemon pokemon, boolean wildBattle){
+        int choice;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What will you use?");
+        printMoves();
+        if(wildBattle){
+            System.out.println("or enter [5] to attemp to catch this pokemon");
+        }
+        try {
+            choice = scanner.nextInt();
+
+            String moveName = getMoveName(choice);
+
+            if (choice != 5) {
+                System.out.println("You used: " + moveName);
+            }
+            if (choice == 1){
+                return move1();
+            }else if(choice == 2){
+                return move2();
+            }else if(choice == 3){
+                return move3();
+            }else if(choice == 4){
+                return move4();
+            }else if(choice == 5 && wildBattle){
+                pokemon.catchPokemon(pokemon);
+            }else{
+                System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+                return getMove(pokemon,wildBattle);
+            }
+        }catch (InputMismatchException e){
+            System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+        }
+        return getMove(pokemon,wildBattle);
+    }
+
+    private String getMoveName(int moveIndex){//the evolution stage will determine which array list to get, the pokeIndex will determine the pokemon and the moveIndex will determine just that
+
+        if (moveIndex == 5){
+            System.out.println("You chose to catch this pokemon!");
+            return "";
+        }
 
         switch (evolutionStage){
             case 1:
@@ -223,7 +238,7 @@ public class Pokemon {
          */
     }
 
-    public void catchPokemon(){
+    public void catchPokemon(Pokemon pokemon){
         Scanner scanner = new Scanner(System.in);
         //scanner object
         System.out.println("To Try To Catch This Pokemon You Must Use A Ball!");
@@ -235,40 +250,112 @@ public class Pokemon {
         int chance = PokemonUtils.randomizer(0,100);
 
         try {
-            int[] pokeballs = {0, User.pokeball, User.greatBall, User.ultraBall, User.masterBall, User.quickBall};
             int choice = scanner.nextInt();
-            //hold the user's choice
             if (choice == 0) {
                 return;
-            }
-            try {
-                if (pokeballs[choice] > 0) {
-                    pokeballs[choice]--;
-                    System.out.println("***USED AN ITEM***");
-                } else {
-                    System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
-                    catchPokemon();
-                }
-            } catch (IndexOutOfBoundsException e) {
+            }else if(choice < 1 || choice > 5){
                 System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-                catchPokemon();
+                catchPokemon(pokemon);
+            } else {
+                //hold the user's choice
+                switch (evolutionStage) {
+                    case 1:
+                        if (catchCalcs(pokemon,choice,chance,Constants.BallRates.pokemonRank1rates.pbRate,Constants.BallRates.pokemonRank1rates.gbRate,Constants.BallRates.pokemonRank1rates.ubRate,Constants.BallRates.pokemonRank1rates.qbRate) == 0){
+                            return;
+                        }else if(catchCalcs(pokemon,choice,chance,Constants.BallRates.pokemonRank1rates.pbRate,Constants.BallRates.pokemonRank1rates.gbRate,Constants.BallRates.pokemonRank1rates.ubRate,Constants.BallRates.pokemonRank1rates.qbRate) == -1){
+                            return;
+                        }
+                        break;
+                    case 2:
+                        if (catchCalcs(pokemon,choice,chance,Constants.BallRates.pokemonRank2rates.pbRate,Constants.BallRates.pokemonRank2rates.gbRate,Constants.BallRates.pokemonRank2rates.ubRate,Constants.BallRates.pokemonRank2rates.qbRate) == 0){
+                            return;
+                        }else if(catchCalcs(pokemon,choice,chance,Constants.BallRates.pokemonRank1rates.pbRate,Constants.BallRates.pokemonRank1rates.gbRate,Constants.BallRates.pokemonRank1rates.ubRate,Constants.BallRates.pokemonRank1rates.qbRate) == -1){
+                            return;
+                        }
+                        break;
+                    case 3:
+                        if (catchCalcs(pokemon,choice,chance,Constants.BallRates.pokemonRank3rates.pbRate,Constants.BallRates.pokemonRank3rates.gbRate,Constants.BallRates.pokemonRank3rates.ubRate,Constants.BallRates.pokemonRank3rates.qbRate) == 0){
+                            return;
+                        }else if(catchCalcs(pokemon,choice,chance,Constants.BallRates.pokemonRank1rates.pbRate,Constants.BallRates.pokemonRank1rates.gbRate,Constants.BallRates.pokemonRank1rates.ubRate,Constants.BallRates.pokemonRank1rates.qbRate) == -1){
+                            return;
+                        }
+                        break;
+                }
             }
         }catch (InputMismatchException e) {
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-            catchPokemon();
+            catchPokemon(pokemon);
         }
     }
 
-    /*
-    this method works like the delete pokemon one.
-    The method also has a cancel option. If the user enters 0 the method will end and go back to whatever comes next.
-    The method also checks for invalid inputs like strings or a number out of range from the array list.
-    It also checks to see if the selected option is greater than 0. If so the method will execute otherwise it will alert the user that
-    They do not have enough of the item. Then it will recall itself.
-     */
+    private int catchCalcs(Pokemon pokemon,int choice,int chance,int pbRate, int gbRate, int ubRate, int qbRate){
+         if (choice == 1){
+            if(User.pokeball > 0){
+                if(chance <= pbRate){
+                    PokemonUtils.addPokemon(pokemon);
+                    pokemon.catched = true;
+                    User.pokeball--;
+                    System.out.println("You caught: " + pokemon.name + "!");
+                    return 0;
+                }
+            }else{
+                return -1;
+            }
+        }else if (choice == 2){
+            if(User.pokeball > 0){
+                if(chance <= gbRate){
+                    PokemonUtils.addPokemon(pokemon);
+                    pokemon.catched = true;
+                    User.greatBall--;
+                    System.out.println("You caught: " + pokemon.name + "!");
+                    return 0;
+                }
+            }else{
+                return -1;
+            }
+        }else if (choice == 3){
+            if(User.pokeball > 0){
+                if(chance <= ubRate){
+                    PokemonUtils.addPokemon(pokemon);
+                    pokemon.catched = true;
+                    User.ultraBall--;
+                    System.out.println("You caught: " + pokemon.name + "!");
+                    return 0;
+                }
+            }else{
+                return -1;
+            }
+        }else if (choice == 4){
+            if(User.pokeball > 0){
+                if(chance <= Constants.BallRates.mbRate){
+                    PokemonUtils.addPokemon(pokemon);
+                    pokemon.catched = true;
+                    User.masterBall--;
+                    System.out.println("You caught: " + pokemon.name + "!");
+                    return 0;
+                }
+            }else{
+                return -1;
+            }
+        }else if (choice == 5){
+            if(User.pokeball > 0){
+                if(chance <= qbRate){
+                    PokemonUtils.addPokemon(pokemon);
+                    pokemon.catched = true;
+                    User.quickBall--;
+                    System.out.println("You caught: " + pokemon.name + "!");
+                    return 0;
+                }
+            }else{
+                return -1;
+            }
+        }
+        System.out.println("The Pokemon Was Not Caught");
+         return 0;
+    }
 
     public void setName(String newName){
-        name = newName;
+        nickName = newName;
     }
 
     //will allow to change the pokemon's name

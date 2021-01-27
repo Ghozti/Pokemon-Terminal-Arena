@@ -25,6 +25,8 @@ public class PokemonUtils{
         User.pokemons.add(pokemon);
         System.out.println("Added: " + pokemon.name + " to your inventory!");
         //adds a pokemon object to the User.pokemons arraylist
+        pokemon.catched = true;
+        //sets the pokemon's catch boolean to true
     }
 
     public static void removePokemon(){
