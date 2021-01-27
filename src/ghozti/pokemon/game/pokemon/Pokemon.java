@@ -114,6 +114,7 @@ public class Pokemon {
                 return move4();
             }else if(choice == 5 && wildBattle){
                 pokemon.catchPokemon(pokemon);
+                return -1;
             }else{
                 System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
                 return getMove(pokemon,wildBattle);
