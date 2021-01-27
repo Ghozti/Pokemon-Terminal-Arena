@@ -10,12 +10,11 @@ public class PokemonUtils{
         return (int) ( Math.random() * num2 + num);
     }//this util can be used anywhere. It will create random number in between whatever numbers specified in the argument
 
-    public static void printPokemon(boolean explicit){
+    public static void printPokemon(boolean explicit){//explicit is the bool which represents if the user wants to display more in dept stats
         for (int i = 0; i < User.pokemons.size(); i++) {
-            System.out.println("[ " + i + " ]" + "" + User.pokemons.get(i).name);
+            System.out.println("[ " + i + " ]" + "" + User.pokemons.get(i).name);//will print the pokemon by index and name
             if (explicit) {
-                User.pokemons.get(i).printStats();
-                System.out.println("");
+                User.pokemons.get(i).printStats();//if explicit is true, this will be called which will print the pokemon's stats such as level, HP, etc
             }
         }
         //will print pokemon

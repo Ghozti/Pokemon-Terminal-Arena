@@ -57,11 +57,11 @@ public class UserMethods extends User{
     }
 
     private static void checkRank(){
-        if(User.userXP >= 37 && User.userXP < 74){
+        if(User.userXP < 50){
             User.userRank = 1;
-        }else if(User.userXP >= 74 && User.userXP < 111){
+        }else if(User.userXP >= 50 && User.userXP < 100){
             User.userRank = 2;
-        }else if(User.userXP >= 111){
+        }else if(User.userXP >= 100){
             User.userRank = 3;
         }
         /*
