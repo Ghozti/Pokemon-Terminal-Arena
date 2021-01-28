@@ -69,7 +69,7 @@ public class BattleUtils {
         System.out.println("enter your choice: ");
         System.out.println("[1] choose another pokemon");
         System.out.println("[2] admit defeat");
-        //dialouge stuff
+        //dialogue stuff
 
         try {
             choice = scanner.nextInt();

@@ -71,6 +71,7 @@ public class UserMethods extends User{
 
     public static void addXp(int xp){
         User.userXP += xp;
+        System.out.println("Gained " + xp + "xp");
         checkRank();
         //what this does is add xp to the user. Also it calls the addRank method every time to see if the user is eligible to meet a certain rank
     }

@@ -8,12 +8,6 @@ public class PokemonLists {
         *MY THEORY
         * have an array list of names, types, and every other argument the pokemon class needs for the object.
         * then have a randomizer determine what to put based on the user's stats
-        * ex:
-        * user rank level 1:
-        * chances of spawning a fucking squirrel: 15%
-        * chances of spawning something common : 85%
-        * get a randomizer to choose what to get
-        * then create the object
      */
 
     public static ArrayList<String> evl1names = new ArrayList<>();
