@@ -371,5 +371,41 @@ public class Pokemon {
         nickName = newName;
     }//this method will be used for the pokemon's nickname.
 
-    //will allow to change the pokemon's name
+    /*
+    ************************************************************************************************************************************************
+    **EVOLVE STUFF BELOW****************************************************************************************************************************
+    *************************************************************************************************************************************************
+     */
+
+    public void evolve(){
+        int index;//will represent the name index in PokemonLists.
+
+        if(evolutionStage == 3){
+            return;
+        }//checks to see if the evolution stage is 3. If so then there is no need to evolve.
+
+        else if (evolutionStage == 1){
+            evolutionStage = 2;
+            for (int i = 0; i < PokemonLists.evl1names.size(); i++){
+                if(name.equals(PokemonLists.evl1names.get(i))){
+                    index = i;
+                    //sets the index to i
+                    name = PokemonLists.evl2names.get(index);
+                    //sets the new name to the name at that index
+                    System.out.println("Congrats! your pokemon evolved to a: " + name);
+                }
+            }//loops to see what the name's index is
+        }else if(evolutionStage == 2){
+            evolutionStage = 3;
+            for (int i = 0; i < PokemonLists.evl2names.size(); i++){
+                if(name.equals(PokemonLists.evl2names.get(i))){
+                    index = i;
+                    //sets the index to i
+                    name = PokemonLists.evl3names.get(index);
+                    //sets the new name to the name at that index
+                    System.out.println("Congrats! your pokemon evolved to a: " + name);
+                }
+            }
+        }//depending on the evo stage, when the pokemon evolves they will move up by 1 until the evo stage is 3
+    }
 }
