@@ -82,6 +82,8 @@ public class PokemonUtils{
             System.out.println("Your pokemon leveled up!  level: " + pokemon.level);
         }//once the xp meets the requirement the level gets added and the xp gets set to 0 again
 
-        //TODO add an evolve ready checker
+        if (pokemon.evolveReady()){
+            pokemon.evolve();
+        }
     }
 }

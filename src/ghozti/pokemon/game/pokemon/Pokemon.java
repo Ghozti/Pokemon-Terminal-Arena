@@ -3,8 +3,6 @@ package ghozti.pokemon.game.pokemon;
 import ghozti.pokemon.game.constants.Constants;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
-
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -31,11 +29,11 @@ public class Pokemon {
     private int move1(){
         switch (evolutionStage){
             case 1:
-                return 0;//(level + 15) - (speed + 5);
+                return 5;
             case 2:
-                return 0;//(level + 25) - (speed + 9);
+                return 5;
             case 3:
-                return 0;//(level + 35) - (speed + 12);
+                return 5;
         }
         return 0;
     }//move 1 done
@@ -43,11 +41,11 @@ public class Pokemon {
     private int move2(){
         switch (evolutionStage){
             case 1:
-                return 1;//(speed + 13) - (level + 1);
+                return 5;
             case 2:
-                return 1;//(speed + 20) - (level + 4);
+                return 5;
             case 3:
-                return 1;//(speed + 28) - (level + 9);
+                return 5;
         }
         return 0;
     }//move 2 done
@@ -55,11 +53,11 @@ public class Pokemon {
     private int move3(){
         switch (evolutionStage){
             case 1:
-                return 5;//(level * 2) - (speed + 5);
+                return 5;
             case 2:
-                return 5;//(level * 2) - (speed + 8);
+                return 5;
             case 3:
-                return 5;//(level * 2) - (speed + 13);
+                return 5;
         }
         return 0;
     }//move 3 done
@@ -67,11 +65,11 @@ public class Pokemon {
     private int move4(){
         switch (evolutionStage){
             case 1:
-                return 10;//(level - (HP - 5));
+                return 5;
             case 2:
-                return 10;//(level - (HP - 10));
+                return 5;
             case 3:
-                return 10;//(level - (HP - 15));
+                return 5;
         }
         return 0;
     }//move 4 done
@@ -257,11 +255,6 @@ public class Pokemon {
          ****************************************************************************************************************/
     }
 
-    public void checkForMaxlevel(){
-        if(level > 100) level = 100;
-        //this will check to see if the level is over 100. If so it will set it back to 100
-    }
-
     public void useHealthPotion(int healthPotions) {
         if(healthPotions < 1){
             System.out.println("***not enough potions!***");
@@ -387,27 +380,41 @@ public class Pokemon {
         }//checks to see if the evolution stage is 3. If so then there is no need to evolve.
 
         else if (evolutionStage == 1){
-            evolutionStage = 2;
             for (int i = 0; i < PokemonLists.evl1names.size(); i++){
                 if(name.equals(PokemonLists.evl1names.get(i))){
                     index = i;
                     //sets the index to i
                     name = PokemonLists.evl2names.get(index);
+                    evolutionStage = 2;
                     //sets the new name to the name at that index
                     System.out.println("Congrats! your pokemon evolved to a: " + name);
+                    return;
                 }
             }//loops to see what the name's index is
         }else if(evolutionStage == 2){
-            evolutionStage = 3;
             for (int i = 0; i < PokemonLists.evl2names.size(); i++){
                 if(name.equals(PokemonLists.evl2names.get(i))){
                     index = i;
                     //sets the index to i
                     name = PokemonLists.evl3names.get(index);
+                    evolutionStage = 3;
                     //sets the new name to the name at that index
                     System.out.println("Congrats! your pokemon evolved to a: " + name);
+                    return;
                 }
             }
         }//depending on the evo stage, when the pokemon evolves they will move up by 1 until the evo stage is 3
+    }
+
+    public boolean evolveReady(){
+        switch (evolutionStage){
+            case 1:
+                if (level >= 40) return true;
+                break;
+            case 2:
+                if (level >= 85) return true;
+                break;
+        }
+        return false;
     }
 }
