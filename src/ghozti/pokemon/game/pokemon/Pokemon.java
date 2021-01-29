@@ -12,7 +12,7 @@ public class Pokemon {
 
     final private int maxHP = 100;
 
-    public int HP, level, speed, evolutionStage;
+    public int HP, level, speed, evolutionStage, XP;
     public String name,nickName,gender;
     public boolean catched;
 
@@ -24,6 +24,7 @@ public class Pokemon {
         name = nm;
         gender = gndr;
         catched = ctch;
+        XP = 0;
         //pokemon constructor
     }
 
@@ -193,7 +194,8 @@ public class Pokemon {
                 "[level: " + level + "]\n" +
                 "[gender: " + gender + "]\n" +
                 "[Evolution Stage: " + evolutionStage + "]\n" +
-                "[speed: " + speed + "]\n");
+                "[speed: " + speed + "]\n" +
+                "[XP: " + XP + "]\n");
         /*
          *the method will check if the pokemon has been caught
          * if so then the method will say "your stats"

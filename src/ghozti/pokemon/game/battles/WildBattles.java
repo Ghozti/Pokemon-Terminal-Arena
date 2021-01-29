@@ -57,11 +57,12 @@ public class WildBattles {
 
                 if(wildPokemon.catched){//in case the user chose to catch this statement will check to see if the user caught the pokemon. If so then the loop and battle stops.
                     UserMethods.addXp(5);
+                    PokemonUtils.addXp(10,userPokemon);
                     return;
                 }else if(wildPokemon.HP <= 0){//if the wild pokemon's hp is <= 0
                     System.out.println("***YOU DEFEATED THE " + wildPokemon.name.toUpperCase() + "***");//this will happen if the user kills the pokemon
                     UserMethods.addXp(5);
-                    //TODO create an xp system for the pokemon
+                    PokemonUtils.addXp(10,userPokemon);
                     return;
                 }
 
@@ -80,6 +81,7 @@ public class WildBattles {
                     }else if (defeatChoice == 2){//if the user admitted defeat
                         System.out.println("***YOU ADMITTED DEFEAT***");
                         UserMethods.addXp(2);
+                        PokemonUtils.addXp(5,userPokemon);
                         return;
                     }
                 }

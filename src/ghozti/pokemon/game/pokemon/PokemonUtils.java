@@ -56,4 +56,32 @@ public class PokemonUtils{
     * If the method captures an invalid input it will call itself again until the user does it right.
     * The method also has a cancel option. If the user enters -1 the method will end and go back to whatever comes next.
      */
+
+    /*************************************************
+     * XP SYSTEM BELOW********************************
+     ************************************************/
+
+    public static void addXp(int amount, Pokemon pokemon){
+        
+        int required = 0;//this int will hold the requirement to gain a level based on the pokemon's evolution stage
+        
+        if(pokemon.evolutionStage == 1) required = 50;//the required xp per level will change by 25 every evo stage going up
+        else if(pokemon.evolutionStage == 2) required = 75;
+        else if(pokemon.evolutionStage == 3) required = 100;
+
+        pokemon.XP += amount;
+        System.out.println("added " + amount + "XP");
+        
+        if(pokemon.XP >= required){
+            if (pokemon.level >= 100) {
+                System.out.println("Pokemon level already at max!");
+                return;
+            }//this checks to see if the pokemon is already at max level (100)
+            pokemon.level++;
+            pokemon.XP = 0;
+            System.out.println("Your pokemon leveled up!  level: " + pokemon.level);
+        }//once the xp meets the requirement the level gets added and the xp gets set to 0 again
+
+        //TODO add an evolve ready checker
+    }
 }
