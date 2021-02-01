@@ -2,9 +2,6 @@ package ghozti.pokemon.game.battles;
 
 import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.pokemon.PokemonUtils;
-import ghozti.pokemon.game.user.User;
-import ghozti.pokemon.game.user.UserMethods;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -56,12 +53,10 @@ public class WildBattles {
                 wildPokemon.HP -= userPokemon.getMove(wildPokemon,true);//the wild pokemon's health will be decreased by the user's move damage (check comments on method) wild battle is true because the user is allowed to attemp to catch here
 
                 if(wildPokemon.catched){//in case the user chose to catch this statement will check to see if the user caught the pokemon. If so then the loop and battle stops.
-                    UserMethods.addXp(5);
                     PokemonUtils.addXp(10,userPokemon);
                     return;
                 }else if(wildPokemon.HP <= 0){//if the wild pokemon's hp is <= 0
                     System.out.println("***YOU DEFEATED THE " + wildPokemon.name.toUpperCase() + "***");//this will happen if the user kills the pokemon
-                    UserMethods.addXp(5);
                     PokemonUtils.addXp(10,userPokemon);
                     return;
                 }
@@ -80,7 +75,6 @@ public class WildBattles {
                         userPokemon = BattleUtils.getUPokemon();//will replace the last user pokemon with a new object and continue the battle.
                     }else if (defeatChoice == 2){//if the user admitted defeat
                         System.out.println("***YOU ADMITTED DEFEAT***");
-                        UserMethods.addXp(2);
                         PokemonUtils.addXp(5,userPokemon);
                         return;
                     }
