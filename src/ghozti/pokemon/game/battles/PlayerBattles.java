@@ -3,7 +3,6 @@ package ghozti.pokemon.game.battles;
 import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.pokemon.PokemonUtils;
 import ghozti.pokemon.game.user.UserMethods;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -49,9 +48,11 @@ public class PlayerBattles {
         encounterMenu();
 
         if (getUserChoice() == 1){
+            enemyPokemon.printStats();
+            //will print the first pokemon's stats
+
             uPokemon = BattleUtils.getUPokemon();
             //will get the user's pokemon object
-            uPokemon.printStats();
 
             while (uPokemon.HP > 0 || enemyPokemon.HP > 0){
                 System.out.println("Your move!: ");
@@ -60,19 +61,20 @@ public class PlayerBattles {
 
                 if (enemyPokemon.HP <= 0){
                     System.out.println("***YOU DEFEATED THE " + enemyPokemon.name.toUpperCase() + "***");
-                    //TODO make it so normal battles call 1 pokemon and ranked call 3
-                    if (pokeCount < 4){
+                    if (pokeCount <= 3 || ranked){
                         enemyPokemon = BattleUtils.getPokemon();
                         pokeCount++;
                         System.out.println("Your opponent has brought a new pokemon!");
                         System.out.println("name: " + enemyPokemon.name);
                         uPokemon.printStats();
+                        //TODO make it so the pokemon created are the same or a higher level than the user's pokemon. ALSO THE AN EVO STAGE BASED ON THEIR USER"S RANK
                     }
+                    UserMethods.addXp(5);
                 }
 
                 System.out.println("Your opponent's health: " + enemyPokemon.HP);
 
-                uPokemon.HP -= enemyPokemon.wildAttack();//it's wild but the function stays the same in terms of calling a radom move
+                uPokemon.HP -= enemyPokemon.wildAttack();//it's wild but the function stays the same in terms of calling a random move
 
                 if(uPokemon.HP <= 0){//if the user's pokemon health is less than or equal to 0
                     System.out.println("***THE POKEMON DEFEATED YOUR POKEMON***");
@@ -82,6 +84,9 @@ public class PlayerBattles {
                         uPokemon = BattleUtils.getUPokemon();//will replace the last user pokemon with a new object and continue the battle.
                     }else if (defeatChoice == 2){//if the user admitted defeat
                         System.out.println("***YOU ADMITTED DEFEAT***");
+                        if (ranked){
+                            UserMethods.addXp(-10);
+                        }
                         UserMethods.addXp(2);
                         PokemonUtils.addXp(5,uPokemon);
                         return;
