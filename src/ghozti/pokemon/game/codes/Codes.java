@@ -8,7 +8,8 @@ public class Codes {
         setCodes();
     }//sets the codes automatically
 
-    public ArrayList<String> codes = new ArrayList<>(23);
+    private ArrayList<String> codes = new ArrayList<>(23);
+    private ArrayList<String> usedCodes = new ArrayList<>(23);
 
     private void setCodes(){
         codes.add("92319");
@@ -33,5 +34,21 @@ public class Codes {
         codes.add("order66");
         codes.add("code");
         codes.add("homer simpson");
+    }
+
+    public void getCode(String code){
+        for (String i : codes) {
+            if (code.equals(i)) {
+                isAlreadyUsed(i);
+                System.out.println("Valid code!");
+                return;
+            }
+        }
+        System.out.println("***This code does not exist!***");
+    }
+
+    public boolean isAlreadyUsed(String code){
+
+        return false;
     }
 }

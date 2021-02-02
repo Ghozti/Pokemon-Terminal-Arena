@@ -1,6 +1,8 @@
 package ghozti.pokemon.game.interactions;
 
 
+import ghozti.pokemon.game.battles.PlayerBattles;
+import ghozti.pokemon.game.battles.WildBattles;
 import ghozti.pokemon.game.environment.Shop;
 import ghozti.pokemon.game.pokemon.PokemonUtils;
 import ghozti.pokemon.game.user.User;
@@ -53,7 +55,7 @@ public class GameStructure {
     }
 
     public static void goToWildGrass(){
-        //This method will allow the user to search for wild pokemon to catch
+        WildBattles.wildBattle();
     }
 
     public static void checkPokemon(){
@@ -88,7 +90,7 @@ public class GameStructure {
      */
 
     public static void lookForBattle(){
-        //TODO call the main battle method
+        PlayerBattles.playerBattle(false);
     }
 
     public static void mainMenu(){
