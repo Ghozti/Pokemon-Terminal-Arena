@@ -6,14 +6,13 @@ import ghozti.pokemon.game.user.User;
 public class PokemonCreator {
 
     private static String getName() {
-        PokemonLists.setAllnames();
         int num = PokemonUtils.randomizer(0,100);
 
         if(num < Constants.pokemonEv1Rate+1){
             return PokemonLists.evl1names.get(PokemonUtils.randomizer(0,PokemonLists.evl1names.size()));
         }else if(num > Constants.pokemonEv1Rate && num < (100-Constants.pokemonEv3Rate)){
             return PokemonLists.evl2names.get(PokemonUtils.randomizer(0,PokemonLists.evl2names.size()));
-        }else if(num > (100-Constants.pokemonEv3Rate)){
+        }else if(num >= (100-Constants.pokemonEv3Rate)){
             return PokemonLists.evl3names.get(PokemonUtils.randomizer(0,PokemonLists.evl3names.size()));
         }
         return "";
@@ -33,7 +32,9 @@ public class PokemonCreator {
         return 0;
     }//will be used to get the level and speed respectively. The number chosen will depend on the user's rank.
 
-    private static String getGender() {
+    private static String getGender(String name) {
+        if (name.equals("Max")) return "Male";
+        //if the pokemon created is max then the gender will always be male
         int determiner = PokemonUtils.randomizer(1,2);
         return determiner == 1 ? "Male" : "Female";
     }//will get the gender at random. If the randomizer calls 0 it returns male if it's 1 it returns female
@@ -65,6 +66,6 @@ public class PokemonCreator {
         }
         //these for each loops check to see if the name matches one of the names in the array lists at PokemonLists. If so it will use the list's evo stage to set the stage.
 
-        return new Pokemon(100,getLevelOrSpeed(),getLevelOrSpeed(),evostage,name,getGender(),false);//this will return the object created.
+        return new Pokemon(100,getLevelOrSpeed(),getLevelOrSpeed(),evostage,name,getGender(name),false);//this will return the object created.
     }
 }
