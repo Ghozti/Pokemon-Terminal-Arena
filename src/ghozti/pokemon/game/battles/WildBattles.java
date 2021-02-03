@@ -2,6 +2,7 @@ package ghozti.pokemon.game.battles;
 
 import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.pokemon.PokemonUtils;
+import ghozti.pokemon.game.user.UserMethods;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -54,10 +55,12 @@ public class WildBattles {
 
                 if(wildPokemon.catched){//in case the user chose to catch this statement will check to see if the user caught the pokemon. If so then the loop and battle stops.
                     PokemonUtils.addXp(10,userPokemon);
+                    UserMethods.addItem(1,10);
                     return;
                 }else if(wildPokemon.HP <= 0){//if the wild pokemon's hp is <= 0
                     System.out.println("***YOU DEFEATED THE " + wildPokemon.name.toUpperCase() + "***");//this will happen if the user kills the pokemon
                     PokemonUtils.addXp(10,userPokemon);
+                    UserMethods.addItem(1,10);
                     return;
                 }
 

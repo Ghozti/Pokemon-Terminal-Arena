@@ -64,6 +64,7 @@ public class PlayerBattles {
                     if (pokeCount <= 3 && ranked) {
                         enemyPokemon = BattleUtils.getPokemon();
                         pokeCount++;
+
                         System.out.println("Your opponent has brought a new pokemon!");
                         System.out.println("name: " + enemyPokemon.name);
                         uPokemon.printStats();
@@ -71,28 +72,32 @@ public class PlayerBattles {
                         //TODO make it so the pokemon created are the same or a higher level than the user's pokemon. ALSO THE AN EVO STAGE BASED ON THEIR USER"S RANK
                     } else if (ranked) {
                         UserMethods.addXp(5);
+                        UserMethods.addItem(1, 20);
                         //if the user wins against all 3 pokemon then the user's rank xp will increase by 5
+                    } else {
+                        UserMethods.addItem(1, 10);
+                        PokemonUtils.addXp(15, uPokemon);
                     }
+                }
 
-                    System.out.println("Your opponent's health: " + enemyPokemon.HP);
+                System.out.println("Your opponent's health: " + enemyPokemon.HP);
 
-                    uPokemon.HP -= enemyPokemon.wildAttack();//it's wild but the function stays the same in terms of calling a random move
+                uPokemon.HP -= enemyPokemon.wildAttack();//it's wild but the function stays the same in terms of calling a random move
 
-                    if (uPokemon.HP <= 0) {//if the user's pokemon health is less than or equal to 0
-                        System.out.println("***THE POKEMON DEFEATED YOUR POKEMON***");
-                        int defeatChoice = BattleUtils.defeatMenu();//will call the method to ask the user if they wish to call another pokemon or to flee
+                if (uPokemon.HP <= 0) {//if the user's pokemon health is less than or equal to 0
+                    System.out.println("***THE POKEMON DEFEATED YOUR POKEMON***");
+                    int defeatChoice = BattleUtils.defeatMenu();//will call the method to ask the user if they wish to call another pokemon or to flee
 
-                        if (defeatChoice == 1) {//if the user chooses to call another pokemon
+                    if (defeatChoice == 1) {//if the user chooses to call another pokemon
                             uPokemon = BattleUtils.getUPokemon();//will replace the last user pokemon with a new object and continue the battle.
-                        } else if (defeatChoice == 2) {//if the user admitted defeat
-                            System.out.println("***YOU ADMITTED DEFEAT***");
-                            if (ranked) {
-                                UserMethods.addXp(-10);
-                                //if the user looses the battle and it's ranked then the user's rank xp will decrease by 10
-                            }
-                            PokemonUtils.addXp(5, uPokemon);
-                            return;
+                    } else if (defeatChoice == 2) {//if the user admitted defeat
+                        System.out.println("***YOU ADMITTED DEFEAT***");
+                        if (ranked) {
+                            UserMethods.addXp(-10);
+                            //if the user looses the battle and it's ranked then the user's rank xp will decrease by 10
                         }
+                        PokemonUtils.addXp(5, uPokemon);
+                        return;
                     }
                 }
             }

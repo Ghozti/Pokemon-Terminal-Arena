@@ -1,12 +1,10 @@
 package ghozti.pokemon.game.interactions;
 
-
-import ghozti.pokemon.game.arena.Arena;
 import ghozti.pokemon.game.battles.PlayerBattles;
 import ghozti.pokemon.game.battles.WildBattles;
 import ghozti.pokemon.game.environment.Shop;
+import ghozti.pokemon.game.environment.arena.Arena;
 import ghozti.pokemon.game.pokemon.PokemonUtils;
-import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 import java.util.InputMismatchException;
 import java.util.Scanner;
