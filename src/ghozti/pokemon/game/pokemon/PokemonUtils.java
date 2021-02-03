@@ -70,7 +70,7 @@ public class PokemonUtils{
         else if(pokemon.evolutionStage == 3) required = 100;
 
         pokemon.XP += amount;
-        System.out.println("added " + amount + "XP");
+        System.out.println("added " + amount + "XP to your pokemon");
         
         if(pokemon.XP >= required){
             if (pokemon.level >= 100) {
