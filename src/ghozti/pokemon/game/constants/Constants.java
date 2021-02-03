@@ -9,11 +9,11 @@ public class Constants {
     * The user rankrate will be a small percentage that will be decreased from the efficiency of all items except the master ball.
      */
 
-    public static final int pokemonEv1Rate = 5;
+    public static final int pokemonEv1Rate = 65;
     //chances of getting an evolution 1 pokemon
     public static final int pokemonEv2Rate = 30;
     //chances of getting an evolution 2 pokemon
-    public static final int pokemonEv3Rate = 65;
+    public static final int pokemonEv3Rate = 5;
     //chances of getting an evolution 3 pokemon
 
     private static int userRankRate = User.userRank == 1 ? 2 : User.userRank == 2 ? 4 : 6;

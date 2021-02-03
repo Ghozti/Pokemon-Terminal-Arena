@@ -1,6 +1,7 @@
 package ghozti.pokemon.game;
 
 import ghozti.pokemon.game.battles.PlayerBattles;
+import ghozti.pokemon.game.interactions.GameStructure;
 import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.pokemon.PokemonLists;
 import ghozti.pokemon.game.user.User;
@@ -15,6 +16,7 @@ public class Game {
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
 
+        GameStructure.mainMenu();
         //PlayerBattles.playerBattle(false);
     }
 }

@@ -48,6 +48,7 @@ public class PlayerBattles {
         encounterMenu();
 
         if (getUserChoice() == 1) {
+            System.out.println("Opponent's name: " + enemyPokemon.name);
             enemyPokemon.printStats();
             //will print the first pokemon's stats
 
@@ -83,6 +84,8 @@ public class PlayerBattles {
                 System.out.println("Your opponent's health: " + enemyPokemon.HP);
 
                 uPokemon.HP -= enemyPokemon.wildAttack();//it's wild but the function stays the same in terms of calling a random move
+
+                System.out.println("Your pokemon's health: " + uPokemon.HP);
 
                 if (uPokemon.HP <= 0) {//if the user's pokemon health is less than or equal to 0
                     System.out.println("***THE POKEMON DEFEATED YOUR POKEMON***");
