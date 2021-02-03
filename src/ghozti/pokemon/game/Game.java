@@ -15,6 +15,6 @@ public class Game {
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
 
-        PlayerBattles.playerBattle(false);
+        //PlayerBattles.playerBattle(false);
     }
 }

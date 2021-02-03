@@ -1,6 +1,7 @@
 package ghozti.pokemon.game.interactions;
 
 
+import ghozti.pokemon.game.arena.Arena;
 import ghozti.pokemon.game.battles.PlayerBattles;
 import ghozti.pokemon.game.battles.WildBattles;
 import ghozti.pokemon.game.environment.Shop;
@@ -16,12 +17,13 @@ public class GameStructure {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
-        String[] options = new String[5];
+        String[] options = new String[6];
         options[0] = "[1] Check Inventory";
         options[1] = "[2] Go to Nearest Pokemon Center";
         options[2] = "[3] Go to wild grass";
         options[3] = "[4] Check pokemon";
         options[4] = "[5] Look for a battle";
+        options[5] = "[6] Go to Arena";
 
         for (String i : options){
             System.out.println(i);
@@ -112,6 +114,8 @@ public class GameStructure {
             case 5:
                 lookForBattle();
                 break;
+            case 6:
+                Arena.ArenaInit();
         }
     }
 }
