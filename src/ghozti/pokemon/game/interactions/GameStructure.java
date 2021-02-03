@@ -55,7 +55,7 @@ public class GameStructure {
     }
 
     public static void goToWildGrass(){
-        WildBattles.wildBattle();
+        WildBattles.wildBattle(false);
     }
 
     public static void checkPokemon(){

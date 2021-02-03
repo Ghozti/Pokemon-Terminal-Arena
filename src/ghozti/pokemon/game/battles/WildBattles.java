@@ -35,7 +35,7 @@ public class WildBattles {
         return choice;
     }//this will get the user's choice and check for invalid inputs the method will make sure the user only enter 1 or 2
 
-    public static void wildBattle(){
+    public static void wildBattle(boolean start){//this boolean will be used at the start of the game. It is used to make sure the user only chooses 1
         Pokemon wildPokemon = BattleUtils.getPokemon();
         //creates the wild pokemon obj
 
@@ -83,6 +83,9 @@ public class WildBattles {
                     }
                 }
             }
+        }else if (choice == 2 && start) {
+            System.out.println("***YOU FLED BUT YOU SHOULD NOT HAVE SO HERE IS ANOTHER POKEMON ENCOUNTER");
+            wildBattle(true);
         }else{
             System.out.println("***YOU FLED***");
         }//this will be the output if the user chose 2 from the beginning

@@ -1,9 +1,13 @@
 package ghozti.pokemon.game.user;
 
+import java.util.Scanner;
+
 public class UserMethods extends User{
 
-    public static void setName(String name1){
-        name = name1;
+    public static void setName(){
+        Scanner scanner = new Scanner(System.in);
+
+        User.name = scanner.nextLine();
         //sets the user's name to whatever they want.
     }
 
