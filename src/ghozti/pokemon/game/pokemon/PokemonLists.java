@@ -47,6 +47,7 @@ public class PokemonLists {
         evl1names.add("Fennekin");
         evl1names.add("Froakie");
         evl1names.add("Fletchling");
+        evl1names.add("Max");
         //sets the names for the evolution 1 array list
 
         evl1moves.add(new String[] {" [1] Vine Whip"," [2] Poison Powder"," [3] Seed Bomb"," [4] Razor Leaf"});
@@ -69,6 +70,7 @@ public class PokemonLists {
         evl1moves.add(new String[] {" [1] Lucky Chant"," [2] Ember"," [3] Fire Blast"," [4] Psyshock"});
         evl1moves.add(new String[] {" [1] Pound"," [2] Bounce"," [3] Hydro Pump"," [4] Bubble"});
         evl1moves.add(new String[] {" [1] Peck"," [2] Natural Gift"," [3] Acrobatics"," [4] Me First"});
+        evl1moves.add(new String[] {" [1] Peck"," [2] scream", " [3] charge"," [4] bite"});
         //adds the arrays to the array lists
         //sets the move names
     }
@@ -94,6 +96,7 @@ public class PokemonLists {
         evl2names.add("Braixen");
         evl2names.add("Frogadier");
         evl2names.add("Fletchinder");
+        evl2names.add("Max");
         //sets the names for the evolution 2 array list
 
         evl2moves.add(new String[] {" [1] Vine Whip"," [2] Power Whip"," [3] Razor Leaf"," [4] Growl"});
@@ -116,6 +119,7 @@ public class PokemonLists {
         evl2moves.add(new String[] {" [1] Will-O-Wisp"," [2] Magic Room"," [3] Sunny Day"," [4] Tail Whip"});
         evl2moves.add(new String[] {" [1] Bubble"," [2] Smokescreen"," [3] Lick"," [4] Pound "});
         evl2moves.add(new String[] {" [1] Tailwind"," [2] Razor Wind"," [3] Flail"," [4] Flame Charge"});
+        evl2moves.add(new String[] {" [1] puff up"," [2] attack guests"," [3] deadly intimidation"," [4] charge"});
         //faster way to do the array stuff
         //sets the move names
     }
@@ -141,7 +145,8 @@ public class PokemonLists {
         evl3names.add("Delphox");
         evl3names.add("Greninja");
         evl3names.add("Talonflame");
-        //sets the names for the evolution 2 array list
+        evl3names.add("Max");
+        //sets the names for the evolution 3 array list
 
         evl3moves.add(new String[] {" [1] Petal Blizzard"," [2] Razor Leaf"," [3] Take Down"," [4] Solar Beam"});
         evl3moves.add(new String[] {" [1] Fire Fang"," [2] Flamethrower"," [3] Inferno"," [4] Dragon Claw"});
@@ -163,6 +168,7 @@ public class PokemonLists {
         evl3moves.add(new String[] {" [1] Fire Blast"," [2] Flamethrower"," [3] Fire Spin"," [4] Ember"});
         evl3moves.add(new String[] {" [1] Quick Attack"," [2] Spikes"," [3] Hydro Pump"," [4] Night Slash"});
         evl3moves.add(new String[] {" [1] Flare Blitz"," [2] Steel Wing "," [3] Ember "," [4] Flame Charge"});
+        evl3moves.add(new String[] {" [1] wing strike"," [2] attack literally anything and anyone"," [3] loud scream"," [4] annoy"});
         //sets the move names
     }
 }
