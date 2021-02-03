@@ -339,6 +339,7 @@ public class Pokemon {
                 pokemon.catched = true;
                 ball--;
                 System.out.println("You caught: " + pokemon.name + "!");
+                User.pokedex.addNewPokemon(pokemon.name);
             } else {
                 System.out.println("the pokemon was not caught");
             }

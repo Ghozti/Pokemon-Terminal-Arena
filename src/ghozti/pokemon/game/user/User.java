@@ -1,6 +1,8 @@
 package ghozti.pokemon.game.user;
 
 import ghozti.pokemon.game.pokemon.Pokemon;
+import ghozti.pokemon.game.pokemon.pokedex.Pokedex;
+
 import java.util.ArrayList;
 
 public class User {
@@ -11,6 +13,8 @@ public class User {
     //this will hold the amount of XP the user has
     public static String name;
     //this represents the user's name
+
+    public static Pokedex pokedex;
 
     public static int money;
     public static int healthPotions;
