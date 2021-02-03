@@ -1,4 +1,4 @@
-package ghozti.pokemon.game.environment;
+package ghozti.pokemon.game.environment.shop;
 
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
@@ -30,7 +30,7 @@ public class Shop {
         try {
             choice = scanner.nextInt();
             if(choice == 0){
-                return 0;
+                return -1;
             }else if(choice > 0 && choice < 8){
                 return choice;
             }else{
@@ -54,11 +54,16 @@ public class Shop {
         int amount;
         int choice = shopMenu();
 
+        if (choice == -1){
+            return;
+        }
+
         if(choice == 7){
             for (int i = 0; i < User.pokemons.size(); i++){
                 User.pokemons.get(i).HP = 100;
             }
             System.out.println("***Healed All Pokemon***");
+            return;
         }
 
         System.out.println("Great! How Many Do You Want?");
