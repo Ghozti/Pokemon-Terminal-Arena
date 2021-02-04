@@ -4,16 +4,14 @@ import ghozti.pokemon.game.battles.WildBattles;
 import ghozti.pokemon.game.interactions.GameStructure;
 import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.pokemon.PokemonLists;
-import ghozti.pokemon.game.pokemon.PokemonUtils;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
-
-import java.util.Scanner;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Game {
     public Game() throws InterruptedException {
-        start();
+        //start();
     }
 
     private void start() throws InterruptedException {
@@ -59,5 +57,11 @@ public class Game {
         System.out.println("removed : Riachu");
         TimeUnit.SECONDS.sleep(1);
         System.out.println("thank you very much.");
+    }
+
+    public int test(int a){
+        Random r = new Random();
+        int range = 5 + 1;
+        return r.nextInt(range);
     }
 }
