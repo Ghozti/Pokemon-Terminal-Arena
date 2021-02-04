@@ -6,7 +6,6 @@ import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.pokemon.PokemonLists;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Game {
@@ -16,16 +15,16 @@ public class Game {
 
     private void start() throws InterruptedException {
         PokemonLists.setAllnames();
-        //welcome();
-        //keep this here
+        welcome();
 
         //User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","uw",true));
         //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         //User.pokemons.add(new Pokemon(100,1,1,3,"Max","male",true));
 
-        GameStructure.mainMenu();
-        //PlayerBattles.playerBattle(false);
+        while (true) {
+            GameStructure.mainMenu();
+        }
     }
 
     public void welcome() throws InterruptedException {
@@ -44,8 +43,8 @@ public class Game {
         System.out.println("now let's go catch some pokemon!");
         System.out.println("oh right you have none, well here i'll let you borrow mine");
 
-        System.out.println("Added Riachu!");
-        User.pokemons.add(new Pokemon(100,100,100,3,"Riachu","male",true));
+        System.out.println("Added Raichu!");
+        User.pokemons.add(new Pokemon(100,100,100,3,"Raichu","male",true));
         TimeUnit.SECONDS.sleep(2);
         System.out.println("i want him back btw");
         TimeUnit.SECONDS.sleep(2);
@@ -53,14 +52,23 @@ public class Game {
         WildBattles.wildBattle(true);
         User.pokemons.remove(0);
 
-        System.out.println("removed : Riachu");
+        System.out.println("removed : Raichu");
         TimeUnit.SECONDS.sleep(1);
         System.out.println("thank you very much.");
-    }
+        TimeUnit.SECONDS.sleep(2);
 
-    public int test(int a){
-        Random r = new Random();
-        int range = 5 + 1;
-        return r.nextInt(range);
+        System.out.println("alright well you have your pokemon i have mine");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("go on...");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("there's nothing left to say you finished the intro");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("alright fine, here is what's left");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("you have a rank, pokedex and codes to use. I hope you read the documentation -.- because i won't say anything else");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println("alright well now this really is it. This is a terminal so i can't do this but pretend i just kicked you to the real game alright...");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println("now GO");
     }
 }
