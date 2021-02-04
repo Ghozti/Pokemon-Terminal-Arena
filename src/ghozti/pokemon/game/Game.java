@@ -11,12 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Game {
     public Game() throws InterruptedException {
-        //start();
+        start();
     }
 
     private void start() throws InterruptedException {
         PokemonLists.setAllnames();
-        welcome();
+        //welcome();
         //keep this here
 
         //User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","uw",true));
@@ -31,7 +31,6 @@ public class Game {
     public void welcome() throws InterruptedException {
         System.out.println("welcome to Pokemon Arena!");
         System.out.println("Let's start by setting your name.");
-        System.out.println("Enter your name: ");
         UserMethods.setName();
 
         System.out.println("Hi " + User.name + " It's nice to meet you!");

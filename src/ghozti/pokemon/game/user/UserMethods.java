@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class UserMethods extends User{
 
     public static void setName(){
+        System.out.println("Enter your name!");
         Scanner scanner = new Scanner(System.in);
 
         User.name = scanner.nextLine();

@@ -15,13 +15,14 @@ public class GameStructure {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
-        String[] options = new String[6];
+        String[] options = new String[7];
         options[0] = "[1] Check Inventory";
         options[1] = "[2] Go to Nearest Pokemon Center";
         options[2] = "[3] Go to wild grass";
         options[3] = "[4] Check pokemon";
         options[4] = "[5] Look for a battle";
         options[5] = "[6] Go to Arena";
+        options[6] = "[7] Advanced options";
 
         for (String i : options){
             System.out.println(i);
@@ -31,7 +32,7 @@ public class GameStructure {
         try {
             choice = scanner.nextInt();
 
-            if (choice < 1 || choice > 6) {
+            if (choice < 1 || choice > 7) {
                 System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
                 choice = optionMenu();
             }
@@ -114,6 +115,9 @@ public class GameStructure {
                 break;
             case 6:
                 Arena.ArenaInit();
+                break;
+            case 7:
+                AdvancedOptions.advancedOptions();
         }
     }
 }
