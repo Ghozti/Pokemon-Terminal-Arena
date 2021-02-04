@@ -35,7 +35,7 @@ public class UserMethods extends User{
                 System.out.println("added " + count + " ultra ball(s) to your inventory!");
                 break;
             case 6:
-                masterBall += masterBall;
+                masterBall += count;
                 System.out.println("added " + count + " master ball(s) to your inventory!");
                 break;
             case 7:

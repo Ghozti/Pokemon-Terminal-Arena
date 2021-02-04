@@ -62,7 +62,7 @@ public class PlayerBattles {
 
                 if (enemyPokemon.HP <= 0) {
                     System.out.println("***YOU DEFEATED THE " + enemyPokemon.name + "***");
-                    if (pokeCount <= 3 && ranked) {
+                    if (ranked && pokeCount <= 3) {
                         enemyPokemon = BattleUtils.getPokemon();
                         pokeCount++;
 
@@ -74,10 +74,12 @@ public class PlayerBattles {
                     } else if (ranked) {
                         UserMethods.addXp(5);
                         UserMethods.addItem(1, 20);
+                        return;
                         //if the user wins against all 3 pokemon then the user's rank xp will increase by 5
                     } else {
                         UserMethods.addItem(1, 10);
                         PokemonUtils.addXp(15, uPokemon);
+                        return;
                     }
                 }
 
