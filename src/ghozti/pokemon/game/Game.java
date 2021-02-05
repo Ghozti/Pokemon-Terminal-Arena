@@ -18,7 +18,7 @@ public class Game {
         //welcome();
         User.masterBall++;
 
-        User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","uw",true));
+        User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","male",true));
         //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         //User.pokemons.add(new Pokemon(100,1,1,3,"Max","male",true));

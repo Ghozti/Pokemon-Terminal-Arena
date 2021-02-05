@@ -74,6 +74,7 @@ public class PlayerBattles {
                     } else if (ranked) {
                         UserMethods.addXp(5);
                         UserMethods.addItem(1, 20);
+                        PokemonUtils.addXp(20, uPokemon);
                         return;
                         //if the user wins against all 3 pokemon then the user's rank xp will increase by 5
                     } else {

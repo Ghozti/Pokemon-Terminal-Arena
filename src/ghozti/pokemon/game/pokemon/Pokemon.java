@@ -446,5 +446,5 @@ public class Pokemon {
                 break;
         }
         return false;
-    }
+    }//this method will return a boolean if the pokemon is evolve ready. This will allow the pokemon to evolve to the next stage if it is an eveolve level 1 or 2.
 }
