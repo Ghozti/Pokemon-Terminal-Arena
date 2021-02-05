@@ -15,9 +15,10 @@ public class Game {
 
     private void start() throws InterruptedException {
         PokemonLists.setAllnames();
-        welcome();
+        //welcome();
+        User.masterBall++;
 
-        //User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","uw",true));
+        User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","uw",true));
         //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
         //User.pokemons.add(new Pokemon(100,1,1,3,"Max","male",true));

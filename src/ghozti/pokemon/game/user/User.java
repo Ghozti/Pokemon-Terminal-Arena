@@ -16,13 +16,13 @@ public class User {
 
     public static Pokedex pokedex;
 
-    public static int money;
-    public static int healthPotions;
-    public static int pokeball;
-    public static int greatBall;
-    public static int ultraBall;
-    public static int masterBall;
-    public static int quickBall;
+    public static int money = 0;
+    public static int healthPotions = 0;
+    public static int pokeball = 0;
+    public static int greatBall = 0;
+    public static int ultraBall = 0;
+    public static int masterBall = 0;
+    public static int quickBall = 0;
     //represents the user's inventory
 
     public static ArrayList<Pokemon> pokemons = new ArrayList<>();//will hold the pokemon objects of the user.

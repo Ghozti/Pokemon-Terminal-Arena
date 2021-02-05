@@ -314,37 +314,66 @@ public class Pokemon {
 
     private void catchCalcs(Pokemon pokemon,int choice,int chance,int pbRate, int gbRate, int ubRate, int qbRate){
 
-        int ball = 0,rate = 0;//ball will represent the user's ball rate will represent the ball's rate.
+        int ball,rate = 0;//ball will represent the user's ball rate will represent the ball's rate.
+        boolean hasEnoughBalls = false;
 
          if (choice == 1){
-            ball = User.pokeball;
-            rate = pbRate;
+            if(User.pokeball > 0){
+                User.pokeball--;
+                rate = pbRate;
+                hasEnoughBalls = true;
+            }else if (User.pokeball <= 0) {
+                System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
+                return;
+            }
         }else if (choice == 2){
-            ball = User.greatBall;
-            rate = gbRate;
+             if(User.greatBall > 0){
+                 User.greatBall--;
+                 rate = gbRate;
+                 hasEnoughBalls = true;
+             }else if (User.greatBall <= 0) {
+                 System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
+                 return;
+             }
         }else if (choice == 3){
-            ball = User.ultraBall;
-            rate = ubRate;
+             if(User.ultraBall > 0){
+                 User.ultraBall--;
+                 rate = ubRate;
+                 hasEnoughBalls = true;
+             }else if (User.ultraBall <= 0) {
+                 System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
+                 return;
+             }
         }else if (choice == 4){
-            ball = User.masterBall;
-            rate = Constants.BallRates.mbRate;
+             if(User.masterBall > 0){
+                 User.masterBall--;
+                 rate = Constants.BallRates.mbRate;
+                 hasEnoughBalls = true;
+             }else if (User.masterBall <= 0) {
+                 System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
+                 return;
+             }
         }else if (choice == 5){
-            ball = User.quickBall;
-            rate = qbRate;
+             if(User.quickBall > 0){
+                 User.quickBall--;
+                 rate = qbRate;
+                 hasEnoughBalls = true;
+             }else if (User.quickBall <= 0) {
+                 System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
+                 return;
+             }
         }
 
-        if(ball > 0) {
+        if(hasEnoughBalls) {
             if (chance <= rate) {
                 PokemonUtils.addPokemon(pokemon);
                 pokemon.catched = true;
-                ball--;
+
                 System.out.println("You caught: " + pokemon.name + "!");
                 User.pokedex.addNewPokemon(pokemon.name);
             } else {
                 System.out.println("the pokemon was not caught");
             }
-        }else if (ball <= 0) {
-            System.out.println("***YOU DO NOT HAVE ENOUGH OF THIS ITEM***");
         }
          /*
          *The parameters:
