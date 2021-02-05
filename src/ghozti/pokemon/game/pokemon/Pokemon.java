@@ -14,6 +14,9 @@ public class Pokemon {
     public String name,nickName,gender;
     public boolean catched;
 
+    private int extraDamage = speed < 10 ? 5 : speed < 25 && speed > 10 ? 8 : speed > 25 || speed < 50 ? 10 : 15;
+    //the pokemon's speed stats will help it in some cases. Specially in battles since the speed can help it deal some extra damage
+    
     public Pokemon(int hp, int lvl, int spd,int evolutionStage, String nm, String gndr, Boolean ctch) {
         HP = hp;
         level = lvl;
