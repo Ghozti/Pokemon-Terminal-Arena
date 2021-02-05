@@ -14,9 +14,10 @@ public class Pokemon {
     public String name,nickName,gender;
     public boolean catched;
 
-    private int extraDamage = speed < 10 ? 5 : speed < 25 && speed > 10 ? 8 : speed > 25 || speed < 50 ? 10 : 15;
-    //the pokemon's speed stats will help it in some cases. Specially in battles since the speed can help it deal some extra damage
-    
+    private int extraDamage = speed < 10 ? 5 : speed < 25 && speed > 10 ? 8 : speed > 10 || speed < 40 ? 10 : 15;
+    private int levelDamage = level < 15 ? 8 : level < 30 && level > 15 ? 13 : level > 15 || level < 45 ? 18 : 23;
+    //the pokemon's speed and level stats will help it in some cases. Specially in battles since the speed can help it deal some extra damage
+
     public Pokemon(int hp, int lvl, int spd,int evolutionStage, String nm, String gndr, Boolean ctch) {
         HP = hp;
         level = lvl;
@@ -32,11 +33,11 @@ public class Pokemon {
     private int move1(){
         switch (evolutionStage){
             case 1:
-                return 5;
+                return 5 + (extraDamage - 3) + (levelDamage - 3);
             case 2:
-                return 5;
+                return 10 + (extraDamage - 2) + (levelDamage - 2);
             case 3:
-                return 5;
+                return 15 + (extraDamage) + (levelDamage);
         }
         return 0;
     }//move 1 done
@@ -44,11 +45,11 @@ public class Pokemon {
     private int move2(){
         switch (evolutionStage){
             case 1:
-                return 5;
+                return 5 + (extraDamage - 5) + (levelDamage - 5);
             case 2:
-                return 5;
+                return 5 + (extraDamage - 3) + (levelDamage - 3);
             case 3:
-                return 5;
+                return 5 + (extraDamage) + (levelDamage);
         }
         return 0;
     }//move 2 done
@@ -56,11 +57,11 @@ public class Pokemon {
     private int move3(){
         switch (evolutionStage){
             case 1:
-                return 5;
+                return 3 + (extraDamage - 3) + (levelDamage - 4);
             case 2:
-                return 5;
+                return 6 + (extraDamage - 1) + (levelDamage - 2);
             case 3:
-                return 5;
+                return 12 + (extraDamage) + (levelDamage);
         }
         return 0;
     }//move 3 done
@@ -68,11 +69,11 @@ public class Pokemon {
     private int move4(){
         switch (evolutionStage){
             case 1:
-                return 5;
+                return 6 + (extraDamage - 6) + (levelDamage - 4);
             case 2:
-                return 5;
+                return 8 + (extraDamage - 3) + (levelDamage - 2);
             case 3:
-                return 5;
+                return 10 + (extraDamage) + (levelDamage);
         }
         return 0;
     }//move 4 done
