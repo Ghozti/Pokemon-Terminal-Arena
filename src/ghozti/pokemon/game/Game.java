@@ -18,10 +18,15 @@ public class Game {
         //welcome();
         User.masterBall++;
 
+        User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","male",true));
+        //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
+        //User.pokemons.add(new Pokemon(1,1,1,1,"nsm","uw",true));
+        //User.pokemons.add(new Pokemon(100,1,1,3,"Max","male",true));
+
         while (true) {
             GameStructure.mainMenu();
         }
-    }//this is the method that is called when the game starts. Everything will go  here.
+    }
 
     public void welcome() throws InterruptedException {
         System.out.println("welcome to Pokemon Arena!");

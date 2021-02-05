@@ -62,13 +62,13 @@ public class PlayerBattles {
 
                 if (enemyPokemon.HP <= 0) {
                     System.out.println("***YOU DEFEATED THE " + enemyPokemon.name + "***");
-                    if (ranked && pokeCount <= 3) {
+                    if (ranked && pokeCount < 3) {
                         enemyPokemon = BattleUtils.getPokemon();
                         pokeCount++;
 
                         System.out.println("Your opponent has brought a new pokemon!");
                         System.out.println("name: " + enemyPokemon.name);
-                        uPokemon.printStats();
+                        enemyPokemon.printStats();
                         //*once the user defeats the first pokemon in a ranked battle there will be 2 more called. The stats will also be printed.
                         //TODO make it so the pokemon created are the same or a higher level than the user's pokemon. ALSO THE AN EVO STAGE BASED ON THEIR USER"S RANK
                     } else if (ranked) {
