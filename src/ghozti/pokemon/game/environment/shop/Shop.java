@@ -73,8 +73,8 @@ public class Shop {
             System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
             shop();
         }else{
-            User.money -= (amount * 10);
-            UserMethods.addItem(choice,amount);
+            User.money -= (amount * costs[choice]);
+            UserMethods.addItem(choice+1,amount);
         }
     }
     /*
