@@ -16,7 +16,7 @@ public class Game {
     private void start() throws InterruptedException {
         PokemonLists.setAllnames();
         //welcome();
-        User.money = 100;
+        User.money = 5100;
 
         User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","male",true));
 

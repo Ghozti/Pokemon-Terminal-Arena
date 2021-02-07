@@ -49,32 +49,85 @@ public class Shop {
      */
 
     public static void shop(){
-        int[] costs = {0, 10, 20, 15, 45, 550, 10};
         Scanner scanner = new Scanner(System.in);
         int amount;
         int choice = shopMenu();
 
-        if (choice == -1){
-            return;
-        }
-
-        if(choice == 7){
-            for (int i = 0; i < User.pokemons.size(); i++){
-                User.pokemons.get(i).HP = 100;
-            }
-            System.out.println("***Healed All Pokemon***");
-            return;
-        }
-
-        System.out.println("Great! How Many Do You Want?");
-        amount = scanner.nextInt();
-
-        if(costs[choice] * amount > User.money){
-            System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
-            shop();
-        }else{
-            User.money -= (amount * costs[choice]);
-            UserMethods.addItem(choice+1,amount);
+        switch (choice){
+            case -1:
+                return;
+            case 1:
+                System.out.println("Great! How Many Do You Want?");
+                amount = scanner.nextInt();
+                if(10 * amount > User.money){
+                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
+                    shop();
+                }else{
+                    User.money -= (amount * 10);
+                    UserMethods.addItem(3,amount);
+                }
+                break;
+            case 2:
+                System.out.println("Great! How Many Do You Want?");
+                amount = scanner.nextInt();
+                if(20 * amount > User.money){
+                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
+                    shop();
+                }else{
+                    User.money -= (amount * 20);
+                    UserMethods.addItem(4,amount);
+                }
+                break;
+            case 3:
+                System.out.println("Great! How Many Do You Want?");
+                amount = scanner.nextInt();
+                if(15 * amount > User.money){
+                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
+                    shop();
+                }else{
+                    User.money -= (amount * 15);
+                    UserMethods.addItem(7,amount);
+                }
+                break;
+            case 4:
+                System.out.println("Great! How Many Do You Want?");
+                amount = scanner.nextInt();
+                if(45 * amount > User.money){
+                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
+                    shop();
+                }else{
+                    User.money -= (amount * 45);
+                    UserMethods.addItem(5,amount);
+                }
+                break;
+            case 5:
+                System.out.println("Great! How Many Do You Want?");
+                amount = scanner.nextInt();
+                if(550 * amount > User.money){
+                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
+                    shop();
+                }else{
+                    User.money -= (amount * 550);
+                    UserMethods.addItem(6,amount);
+                }
+                break;
+            case 6:
+                System.out.println("Great! How Many Do You Want?");
+                amount = scanner.nextInt();
+                if(10 * amount > User.money){
+                    System.out.println("***YOU DO NOT HAVE ENOUGH!!***");
+                    shop();
+                }else{
+                    User.money -= (amount * 10);
+                    UserMethods.addItem(2,amount);
+                }
+                break;
+            case 7:
+                for (int i = 0; i < User.pokemons.size(); i++){
+                    User.pokemons.get(i).HP = 100;
+                }
+                System.out.println("***Healed All Pokemon***");
+                return;
         }
     }
     /*
