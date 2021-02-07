@@ -25,5 +25,5 @@ public class User {
     public static int quickBall = 0;
     //represents the user's inventory
 
-    public static ArrayList<Pokemon> pokemons = new ArrayList<>(8);//will hold the pokemon objects of the user.
+    public static ArrayList<Pokemon> pokemons = new ArrayList<>();//will hold the pokemon objects of the user.
 }
