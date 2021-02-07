@@ -15,17 +15,14 @@ public class Game {
 
     private void start() throws InterruptedException {
         PokemonLists.setAllnames();
-        //welcome();
-        User.money = 5100;
-
-        User.pokemons.add(new Pokemon(100,1,1,1,"Bulbasaur","male",true));
-
+        mainTitle();
+        welcome();
         while (true) {
             GameStructure.mainMenu();
         }
     }
 
-    public void welcome() throws InterruptedException {
+    private void welcome() throws InterruptedException {
         System.out.println("welcome to Pokemon Arena!");
         System.out.println("Let's start by setting your name.");
         UserMethods.setName();
@@ -68,5 +65,23 @@ public class Game {
         System.out.println("alright well now this really is it. This is a terminal so i can't do this but pretend i just kicked you to the real game alright...");
         TimeUnit.SECONDS.sleep(1);
         System.out.println("now GO");
+    }
+
+    private void mainTitle(){
+        System.out.println("\n" +
+                "8888888b.           888                                                     88888888888                             d8b                   888              d8888                                    \n" +
+                "888   Y88b          888                                                         888                                 Y8P                   888             d88888                                    \n" +
+                "888    888          888                                                         888                                                       888            d88P888                                    \n" +
+                "888   d88P  .d88b.  888  888  .d88b.  88888b.d88b.   .d88b.  88888b.            888   .d88b.  888d888 88888b.d88b.  888 88888b.   8888b.  888           d88P 888 888d888  .d88b.  88888b.   8888b.  \n" +
+                "8888888P\"  d88\"\"88b 888 .88P d8P  Y8b 888 \"888 \"88b d88\"\"88b 888 \"88b           888  d8P  Y8b 888P\"   888 \"888 \"88b 888 888 \"88b     \"88b 888          d88P  888 888P\"   d8P  Y8b 888 \"88b     \"88b \n" +
+                "888        888  888 888888K  88888888 888  888  888 888  888 888  888           888  88888888 888     888  888  888 888 888  888 .d888888 888         d88P   888 888     88888888 888  888 .d888888 \n" +
+                "888        Y88..88P 888 \"88b Y8b.     888  888  888 Y88..88P 888  888           888  Y8b.     888     888  888  888 888 888  888 888  888 888        d8888888888 888     Y8b.     888  888 888  888 \n" +
+                "888         \"Y88P\"  888  888  \"Y8888  888  888  888  \"Y88P\"  888  888           888   \"Y8888  888     888  888  888 888 888  888 \"Y888888 888       d88P     888 888      \"Y8888  888  888 \"Y888888 \n" +
+                "                                                                                                                                                                                                    \n" +
+                "                                                                                                                                                                                                    \n" +
+                "                                                                                                                                                                                                    \n");
+
+        System.out.println("By: Ghozti.\n" +
+                "For: you <3");
     }
 }
