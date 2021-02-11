@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class PokemonUtils{
 
     public static int randomizer(int num, int num2){
-        return (int) ( Math.random() * num2 + num);
+        return (int) ( Math.random() * (num2 + 1) + num);
     }//this util can be used anywhere. It will create random number in between whatever numbers specified in the argument
 
     public static void printPokemon(boolean explicit){//explicit is the bool which represents if the user wants to display more in dept stats

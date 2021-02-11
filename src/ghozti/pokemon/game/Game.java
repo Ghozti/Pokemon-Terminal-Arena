@@ -4,6 +4,7 @@ import ghozti.pokemon.game.battles.WildBattles;
 import ghozti.pokemon.game.interactions.GameStructure;
 import ghozti.pokemon.game.pokemon.Pokemon;
 import ghozti.pokemon.game.pokemon.PokemonLists;
+import ghozti.pokemon.game.pokemon.PokemonUtils;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 import java.util.concurrent.TimeUnit;
