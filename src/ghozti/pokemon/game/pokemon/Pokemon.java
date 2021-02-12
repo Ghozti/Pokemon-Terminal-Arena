@@ -107,19 +107,20 @@ public class Pokemon {
         printMoves();
         //will print the pokemon's moves.
         if(wildBattle){
-            System.out.println("or enter [5] to attemp to catch this pokemon");
+            System.out.println("enter [5] to attemp to catch this pokemon\n" +
+                    "or enter [6] to use a health potion");
         }//the method takes in a bool called 'wildBattle' this bool will be used if the method is being called in a wild battle. If so, the user will be able to have a shot at catching the pokemon.
         try {
             choice = scanner.nextInt();
 
-            if (choice < 1 || choice > 5){
+            if (choice < 1 || choice > 6){
                 System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
                 return getMove(pokemon,wildBattle);
             }//this condition will check to see if the user entered a number greater than 5 or less than 0 (which would be an invalid input)
 
             String moveName = getMoveName(choice);//the choice int will also be passed on to getMoveName to get the actual move's name based on the pokemon.
 
-            if (choice != 5) {
+            if (choice < 5) {
                 System.out.println("You used: " + moveName);
             }//if the user did not enter 5 the console will confirm their choice.
 
@@ -135,7 +136,10 @@ public class Pokemon {
             }else if(choice == 5 && wildBattle){
                 pokemon.catchPokemon(pokemon);//will call the catch pokemon method.
                 return 0;
-            }else{
+            }else if(choice == 6){
+                useHealthPotion(User.healthPotions);//will use an hp potion
+                return 0;
+            }else {
                 System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
                 return getMove(pokemon,wildBattle);
             }//if the user entered another number or tried to catch the pokemon despite "wildBattle" not being true.
@@ -151,6 +155,10 @@ public class Pokemon {
             System.out.println("You chose to catch this pokemon!");
             return "";
         }//the first thing checked will be if the user entered 5 (the catch pokemon option).
+
+        if (moveIndex == 6){
+            return "";
+        }//if the moveindex is 6 it will stop this method
 
         switch (evolutionStage){
             case 1:

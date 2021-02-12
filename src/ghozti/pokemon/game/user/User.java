@@ -17,7 +17,7 @@ public class User {
     public static Pokedex pokedex;
 
     public static int money = 0;
-    public static int healthPotions = 0;
+    public static int healthPotions = 1;
     public static int pokeball = 0;
     public static int greatBall = 0;
     public static int ultraBall = 0;
