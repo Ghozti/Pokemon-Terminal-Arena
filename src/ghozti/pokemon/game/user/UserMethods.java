@@ -57,7 +57,7 @@ public class UserMethods extends User{
         System.out.println("3. " + ultraBall + " UltraBall(s)");
         System.out.println("4. " + masterBall + " MasterBall(s)");
         System.out.println("5. " + quickBall + " QuickBall(s)");
-        System.out.println("6. " + healthPotions + " HeathPotion(s)");
+        System.out.println("6. " + healthPotions + " HealthPotion(s)");
         //will display the user's inventory. simple
     }
 

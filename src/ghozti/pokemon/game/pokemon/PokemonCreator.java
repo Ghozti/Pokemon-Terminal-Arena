@@ -9,11 +9,11 @@ public class PokemonCreator {
         int num = PokemonUtils.randomizer(0,100);
 
         if(num < Constants.pokemonEv1Rate+1){
-            return PokemonLists.evl1names.get(PokemonUtils.randomizer(0,PokemonLists.evl1names.size()));
+            return PokemonLists.evl1names.get(PokemonUtils.randomizer(0,PokemonLists.evl1names.size()-1));
         }else if(num > Constants.pokemonEv1Rate && num < (100-Constants.pokemonEv3Rate)){
-            return PokemonLists.evl2names.get(PokemonUtils.randomizer(0,PokemonLists.evl2names.size()));
+            return PokemonLists.evl2names.get(PokemonUtils.randomizer(0,PokemonLists.evl2names.size()-1));
         }else if(num >= (100-Constants.pokemonEv3Rate)){
-            return PokemonLists.evl3names.get(PokemonUtils.randomizer(0,PokemonLists.evl3names.size()));
+            return PokemonLists.evl3names.get(PokemonUtils.randomizer(0,PokemonLists.evl3names.size()-1));
         }
         return "";
     }//will use the pokemon chance rates and return a name using whatever the rolled number is.It will also call a random index from the pokemon list
