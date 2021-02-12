@@ -50,7 +50,7 @@ public class PokemonLists {
         //sets the names for the evolution 1 array list
 
         evl1moves.add(new String[] {" [1] Vine Whip"," [2] Poison Powder"," [3] Seed Bomb"," [4] Razor Leaf"});
-        evl1moves.add(new String[] {" [1] Vine Whip"," [2] Poison Powder"," [3] Seed Bomb"," [4] Razor Leaf"});
+        evl1moves.add(new String[] {" [1] Scratch"," [2] Dragon Rage"," [3] Fire Fang"," [4] Flamethrower"});
         evl1moves.add(new String[] {" [1] Bubble"," [2] Hydro Pump" ," [3] Protect"," [4] Tail Whip"});
         evl1moves.add(new String[] {" [1] Tackle"," [2] String Shot"," [3] Bug Bite"," [4] Web Launch"});
         evl1moves.add(new String[] {" [1] Thunder Shock"," [2] Charm"," [3] Sweet Kiss"," [4] Thunder Wave"});
