@@ -4,6 +4,7 @@ import ghozti.pokemon.game.constants.Constants;
 import ghozti.pokemon.game.user.User;
 import ghozti.pokemon.game.user.UserMethods;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Pokemon {
@@ -79,7 +80,8 @@ public class Pokemon {
     }//move 4 done
 
     public int wildAttack(){
-        int moveChoice = PokemonUtils.randomizer(1,4);
+        Random random = new Random();
+        int moveChoice = random.nextInt(4-1)  + 2;
         System.out.println("Your opponent used: " + getMoveName(moveChoice));
         if(moveChoice == 1){
             return move1();
