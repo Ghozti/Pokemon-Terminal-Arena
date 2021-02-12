@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class User {
 
-    public static int userRank;
+    public static int userRank = 1;
     //this will be the user's rank which will be put to use for different difficulties.
     public static int userXP;
     //this will hold the amount of XP the user has
@@ -17,7 +17,7 @@ public class User {
     public static Pokedex pokedex;
 
     public static int money = 0;
-    public static int healthPotions = 1;
+    public static int healthPotions = 0;
     public static int pokeball = 0;
     public static int greatBall = 0;
     public static int ultraBall = 0;
