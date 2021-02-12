@@ -16,15 +16,11 @@ public class Game {
 
     private void start() throws InterruptedException {
         PokemonLists.setAllnames();
-        Pokemon pokemon = new Pokemon(100,100,100,1,"Bulbasaur","male",false);
-        for (int i = 0; i < 1000; i++){
-            System.out.println((int) ( Math.random() * (4 + 1) + 1));
+        mainTitle();
+        welcome();
+        while (true) {
+            GameStructure.mainMenu();
         }
-        //mainTitle();
-        //welcome();
-        //while (true) {
-            //GameStructure.mainMenu();
-        //}
     }
 
     private void welcome() throws InterruptedException {
